@@ -70,11 +70,6 @@ good the training is. Champions — engineers who are genuinely curious and cred
 to their peers — are the mechanism for building Desire. They are more important
 than mandates.
 
-One honest limitation of this skill: AI tooling is moving fast enough that some
-specific guidance here will date quickly. The measurement framework and the
-change management structure are durable; the tool-specific notes are not. Check
-the changelog and the version date before using.
-
 ---
 
 ## The prompt

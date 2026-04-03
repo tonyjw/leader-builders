@@ -24,8 +24,7 @@ if (!skill) {
   return Astro.redirect('/');
 }
 
-const { frontmatter, sections } = skill;
-const fm = frontmatter;
+const { frontmatter: fm, sections } = skill;
 
 const categoryLabel = CATEGORIES[fm.category] ?? fm.category;
 const failureModes = parseFailureModes(sections.failureModes);
@@ -36,12 +35,11 @@ const goodOutputHtml = renderMarkdown(sections.goodOutput);
 const poorOutputHtml = renderMarkdown(sections.poorOutput);
 const promptNotesHtml = sections.promptNotes ? renderMarkdown(sections.promptNotes) : '';
 const sourcesHtml = renderSources(sections.sources);
-const changelogHtml = renderMarkdown(sections.changelogBody);
 ---
 
 <Base
   title={fm.title}
-  description={fm['when-to-use'].replace(/\n/g, ' ')}
+  description={fm['when-to-use']}
 >
   <!-- 1. HEADER -->
   <div class="skill-header">
@@ -65,13 +63,13 @@ const changelogHtml = renderMarkdown(sections.changelogBody);
   </div>
 
   <!-- 2. LEDE -->
-  <p class="skill-lede">{fm['when-to-use'].replace(/\n/g, ' ')}</p>
+  <p class="skill-lede">{fm['when-to-use']}</p>
 
   <!-- 3. NOT-FOR WARNING -->
   {fm['not-for'] && (
     <div class="not-for-box">
       <div class="not-for-box__label">Not for:</div>
-      <div>{fm['not-for'].replace(/\n/g, ' ')}</div>
+      <div>{fm['not-for']}</div>
     </div>
   )}
 

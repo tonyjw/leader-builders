@@ -66,7 +66,6 @@ export const CATEGORIES: Record<string, string> = {
 
 // ── Parsing ──────────────────────────────────────────────────────
 
-/** Parse YAML frontmatter without gray-matter (no fs dependency) */
 function parseFrontmatter(raw: string): { data: Record<string, unknown>; content: string } {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
   if (!match) return { data: {}, content: raw };
@@ -98,7 +97,6 @@ function extractSections(body: string): SkillSections {
     promptCode,
     variables: sectionMap['Variables'] ?? '',
     goodOutput: sectionMap['What good output looks like'] ?? '',
-    // em dash (U+2014) in the section heading
     poorOutput: sectionMap['What poor output looks like \u2014 and why'] ?? '',
     failureModes: sectionMap['Failure modes'] ?? '',
     promptNotes: sectionMap['Prompt notes'] ?? '',
@@ -153,9 +151,14 @@ export function getAllSkills(): Skill[] {
   _skills = Object.entries(rawFiles)
     .map(([_path, raw]) => {
       const { data, content } = parseFrontmatter(raw);
-      const frontmatter = data as SkillFrontmatter;
+      const fm = data as SkillFrontmatter;
+
+      // Normalize multiline YAML scalars to single-line strings
+      fm['when-to-use'] = fm['when-to-use']?.replace(/\n/g, ' ').trim() ?? '';
+      if (fm['not-for']) fm['not-for'] = fm['not-for'].replace(/\n/g, ' ').trim();
+
       const sections = extractSections(content);
-      return { frontmatter, sections, slug: frontmatter.slug };
+      return { frontmatter: fm, sections, slug: fm.slug };
     })
     .filter(s => s.frontmatter.status === 'active')
     .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title));
@@ -171,10 +174,9 @@ export function getSkillsByCategory(category: string): Skill[] {
   return getAllSkills().filter(s => s.frontmatter.category === category);
 }
 
+/** Maps evidence-strength value to its CSS class suffix. Falls back to 'emerging'. */
 export function strengthClass(strength: string): string {
-  if (strength === 'strong') return 'strong';
-  if (strength === 'moderate') return 'moderate';
-  return 'emerging';
+  return strength === 'strong' || strength === 'moderate' ? strength : 'emerging';
 }
 
 export function evidenceIcon(type: string): string {

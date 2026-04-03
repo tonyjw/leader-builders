@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { CATEGORIES, getSkillsByCategory, strengthClass, truncate } from '../../lib/skills';
+import SkillCard from '../../components/SkillCard.astro';
+import { CATEGORIES, getSkillsByCategory } from '../../lib/skills';
 
 export function getStaticPaths() {
   return Object.keys(CATEGORIES).map(category => ({
@@ -28,23 +29,6 @@ const skills = getSkillsByCategory(category!);
   </div>
 
   <div class="card-grid">
-    {skills.map(skill => (
-      <a
-        href={`/skills/${skill.slug}/`}
-        class="skill-card"
-        data-category={skill.frontmatter.category}
-      >
-        <div class="skill-card__title">{skill.frontmatter.title}</div>
-        <p class="skill-card__desc">
-          {truncate(skill.frontmatter['when-to-use'].replace(/\n/g, ' '), 120)}
-        </p>
-        <div class="skill-card__badges">
-          <span class="badge badge-difficulty">{skill.frontmatter.difficulty}</span>
-          <span class={`badge badge-${strengthClass(skill.frontmatter['evidence-strength'])}`}>
-            {skill.frontmatter['evidence-strength']}
-          </span>
-        </div>
-      </a>
-    ))}
+    {skills.map(skill => <SkillCard skill={skill} showCategory={false} />)}
   </div>
 </Base>

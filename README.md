@@ -17,7 +17,7 @@ Most prompt libraries are collections of templates with no explanation of why th
 ## Repo structure
 
 ```
-eng-builders/
+leader-builders/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml          # Cloudflare Pages deploy on push to main

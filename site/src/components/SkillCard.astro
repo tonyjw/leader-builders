@@ -1,0 +1,26 @@
+---
+import type { Skill } from '../lib/skills';
+import { CATEGORIES, strengthClass, truncate } from '../lib/skills';
+
+interface Props {
+  skill: Skill;
+  showCategory?: boolean;
+}
+
+const { skill, showCategory = true } = Astro.props;
+const { frontmatter: fm } = skill;
+---
+
+<a href={`/skills/${skill.slug}/`} class="skill-card" data-category={fm.category}>
+  <div class="skill-card__title">{fm.title}</div>
+  <p class="skill-card__desc">{truncate(fm['when-to-use'], 120)}</p>
+  <div class="skill-card__badges">
+    {showCategory && (
+      <span class="badge badge-difficulty">{CATEGORIES[fm.category] ?? fm.category}</span>
+    )}
+    <span class="badge badge-difficulty">{fm.difficulty}</span>
+    <span class={`badge badge-${strengthClass(fm['evidence-strength'])}`}>
+      {fm['evidence-strength']}
+    </span>
+  </div>
+</a>

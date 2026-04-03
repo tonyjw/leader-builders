@@ -1,16 +1,16 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
-# eng.builders
+# leader.builders
 
 A structured skill library for engineering managers and leaders. Every skill is a prompt you can use directly in Claude, ChatGPT, or any LLM — backed by research, practitioner evidence, and honest failure modes.
 
-**Live site:** [https://eng.builders](https://eng.builders)
+**Live site:** [https://leader.builders](https://leader.builders)
 
 ---
 
 ## Why this is different
 
-Most prompt libraries are collections of templates with no explanation of why they work. eng.builders takes a different approach: every skill includes the reasoning behind the prompt design, grounded in research and practitioner literature, so you understand what the prompt is optimizing for and can adapt it intelligently. Failure modes are documented so you know where the skill breaks down.
+Most prompt libraries are collections of templates with no explanation of why they work. leader.builders takes a different approach: every skill includes the reasoning behind the prompt design, grounded in research and practitioner literature, so you understand what the prompt is optimizing for and can adapt it intelligently. Failure modes are documented so you know where the skill breaks down.
 
 ---
 
@@ -60,7 +60,7 @@ leader-builders/
 
 ## Using a skill
 
-1. Browse skills at [eng.builders](https://eng.builders) or in the `skills/` directory
+1. Browse skills at [leader.builders](https://leader.builders) or in the `skills/` directory
 2. Open the skill page and read **The reasoning** section — it explains what the prompt is optimizing for
 3. Click **Copy** to copy the prompt, or copy it directly from the markdown file
 4. Fill in the `{{VARIABLES}}` with your specific context — the quality of your inputs determines the quality of the output

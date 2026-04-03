@@ -6,12 +6,6 @@
   --color-bg: #ffffff;
   --color-bg-subtle: #f9f9f9;
   --color-accent: #2563eb;
-  --color-badge-strong-bg: #dcfce7;
-  --color-badge-strong-text: #166534;
-  --color-badge-moderate-bg: #fef9c3;
-  --color-badge-moderate-text: #854d0e;
-  --color-badge-emerging-bg: #f3f4f6;
-  --color-badge-emerging-text: #374151;
   --color-warning-bg: #fffbeb;
   --color-warning-border: #f59e0b;
   --color-amber: #f59e0b;
@@ -233,40 +227,10 @@ details > *:not(summary) {
   white-space: nowrap;
 }
 
-.badge-strong {
-  background: var(--color-badge-strong-bg);
-  color: var(--color-badge-strong-text);
-}
-
-.badge-moderate {
-  background: var(--color-badge-moderate-bg);
-  color: var(--color-badge-moderate-text);
-}
-
-.badge-emerging {
-  background: var(--color-badge-emerging-bg);
-  color: var(--color-badge-emerging-text);
-}
-
 .badge-difficulty {
   background: var(--color-bg-subtle);
   color: var(--color-text-muted);
   border: 1px solid var(--color-border);
-}
-
-.badge-research {
-  background: var(--color-badge-strong-bg);
-  color: var(--color-badge-strong-text);
-}
-
-.badge-practitioner {
-  background: #eff6ff;
-  color: #1d4ed8;
-}
-
-.badge-field {
-  background: var(--color-badge-emerging-bg);
-  color: var(--color-badge-emerging-text);
 }
 
 .badge-row {
@@ -328,35 +292,43 @@ details > *:not(summary) {
   gap: 0.35rem;
 }
 
-/* ── Filter bar ─────────────────────────────────────── */
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+/* ── Search bar ─────────────────────────────────────── */
+.search-container {
   margin: 1.5rem 0;
 }
 
-.filter-btn {
-  background: var(--color-bg-subtle);
+.search-input {
+  width: 100%;
+  max-width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
   border: 1px solid var(--color-border);
-  border-radius: 999px;
-  padding: 0.35em 0.9em;
-  font-size: 0.875rem;
-  cursor: pointer;
-  color: var(--color-text-muted);
+  border-radius: 6px;
+  background: var(--color-bg);
+  color: var(--color-text);
   font-family: var(--font-stack);
-  transition: all 0.15s;
+  transition: border-color 0.15s;
 }
 
-.filter-btn:hover {
+.search-input:focus {
+  outline: none;
   border-color: var(--color-accent);
-  color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
 }
 
-.filter-btn.active {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: #fff;
+.search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.no-results {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--color-text-muted);
+}
+
+.no-results p {
+  font-size: 1.1rem;
+  margin: 0;
 }
 
 /* ── Homepage hero ──────────────────────────────────── */

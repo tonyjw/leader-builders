@@ -10,12 +10,6 @@ tags: [ai-adoption, roi, executive-communication, business-case, leadership]
 difficulty: intermediate
 works-with: [claude, chatgpt]
 
-evidence-strength: moderate
-evidence-types: [research, practitioner]
-primary-sources:
-  - "McKinsey Global Institute, The Economic Potential of Generative AI, 2023"
-  - "Kalliamvakou, GitHub Copilot Research, GitHub, 2022"
-
 when-to-use: >
   When you need to present the business case for an AI tooling investment to
   a CFO, CEO, or board — people who will ask "what's the return?" and won't

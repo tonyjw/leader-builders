@@ -10,13 +10,6 @@ tags: [ai-adoption, copilot, llm, change-management, rollout, measurement]
 difficulty: advanced
 works-with: [claude, chatgpt]
 
-evidence-strength: moderate
-evidence-types: [research, practitioner, field]
-primary-sources:
-  - "Forsgren et al., Accelerate, 2018"
-  - "McKinsey Global Institute, The Economic Potential of Generative AI, 2023"
-  - "Kalliamvakou, GitHub Copilot Research, 2022"
-
 when-to-use: >
   When planning or mid-execution on an AI tooling rollout — coding assistants,
   production LLM integrations, or internal AI tooling — and you need a

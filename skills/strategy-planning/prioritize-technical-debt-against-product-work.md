@@ -10,12 +10,6 @@ tags: [technical-debt, prioritization, roadmap, engineering-strategy, product-en
 difficulty: advanced
 works-with: [claude, chatgpt]
 
-evidence-strength: moderate
-evidence-types: [practitioner, research]
-primary-sources:
-  - "Cunningham, The WyCash Portfolio Management System, 1992"
-  - "Kruchten et al., Technical Debt: From Metaphor to Theory and Practice, 2012"
-
 when-to-use: >
   When you need to make a defensible case — to your team, your product
   counterpart, or leadership — about how much engineering capacity to allocate

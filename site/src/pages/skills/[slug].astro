@@ -5,10 +5,7 @@ import {
   getSkillBySlug,
   CATEGORIES,
   renderMarkdown,
-  renderSources,
   parseFailureModes,
-  strengthClass,
-  evidenceIcon,
 } from '../../lib/skills';
 
 export function getStaticPaths() {
@@ -34,7 +31,7 @@ const variablesHtml = renderMarkdown(sections.variables);
 const goodOutputHtml = renderMarkdown(sections.goodOutput);
 const poorOutputHtml = renderMarkdown(sections.poorOutput);
 const promptNotesHtml = sections.promptNotes ? renderMarkdown(sections.promptNotes) : '';
-const sourcesHtml = renderSources(sections.sources);
+const sourcesHtml = renderMarkdown(sections.sources);
 ---
 
 <Base
@@ -53,12 +50,6 @@ const sourcesHtml = renderSources(sections.sources);
 
     <div class="badge-row">
       <span class="badge badge-difficulty">{fm.difficulty}</span>
-      <span class={`badge badge-${strengthClass(fm['evidence-strength'])}`}>
-        {fm['evidence-strength']} evidence
-      </span>
-      <span class="evidence-icons" title="Evidence types">
-        {fm['evidence-types'].map(t => evidenceIcon(t)).join(' ')}
-      </span>
     </div>
   </div>
 
@@ -73,23 +64,13 @@ const sourcesHtml = renderSources(sections.sources);
     </div>
   )}
 
-  <!-- 4. PRIMARY SOURCES BLOCK -->
-  <aside class="sources-aside">
-    <div class="sources-aside__label">Key sources behind this skill</div>
-    <ul>
-      {fm['primary-sources'].map(source => (
-        <li>{source}</li>
-      ))}
-    </ul>
-  </aside>
-
-  <!-- 5. REASONING -->
+  <!-- 4. REASONING -->
   <section>
     <div class="section-label">The reasoning</div>
     <div class="prose" set:html={reasoningHtml} />
   </section>
 
-  <!-- 6. PROMPT -->
+  <!-- 5. PROMPT -->
   <section>
     <div class="section-label">The prompt</div>
     <div class="prompt-block">
@@ -98,15 +79,15 @@ const sourcesHtml = renderSources(sections.sources);
     </div>
   </section>
 
-  <!-- 7. VARIABLES -->
+  <!-- 6. VARIABLES -->
   {sections.variables && (
     <section>
       <div class="section-label">Variables</div>
-      <div class="variables-section prose" set:html={variablesHtml} />
+      <div class="prose" set:html={variablesHtml} />
     </section>
   )}
 
-  <!-- 8. GOOD OUTPUT (collapsible) -->
+  <!-- 7. GOOD OUTPUT (collapsible) -->
   {sections.goodOutput && (
     <details>
       <summary>See what good output looks like</summary>
@@ -114,7 +95,7 @@ const sourcesHtml = renderSources(sections.sources);
     </details>
   )}
 
-  <!-- 9. POOR OUTPUT (collapsible) -->
+  <!-- 8. POOR OUTPUT (collapsible) -->
   {sections.poorOutput && (
     <details>
       <summary>See what poor output looks like — and why</summary>
@@ -122,7 +103,7 @@ const sourcesHtml = renderSources(sections.sources);
     </details>
   )}
 
-  <!-- 10. FAILURE MODES -->
+  <!-- 9. FAILURE MODES -->
   {failureModes.length > 0 && (
     <section>
       <div class="section-label">Failure modes</div>
@@ -137,7 +118,7 @@ const sourcesHtml = renderSources(sections.sources);
     </section>
   )}
 
-  <!-- 11. PROMPT NOTES -->
+  <!-- 10. PROMPT NOTES -->
   {promptNotesHtml && (
     <section>
       <div class="section-label">Model notes</div>
@@ -145,7 +126,7 @@ const sourcesHtml = renderSources(sections.sources);
     </section>
   )}
 
-  <!-- 12. SOURCES -->
+  <!-- 11. SOURCES -->
   {sections.sources && (
     <section>
       <div class="section-label">Sources</div>
@@ -153,7 +134,7 @@ const sourcesHtml = renderSources(sections.sources);
     </section>
   )}
 
-  <!-- 13. CHANGELOG -->
+  <!-- 12. CHANGELOG -->
   {fm.changelog && fm.changelog.length > 0 && (
     <section>
       <div class="section-label">Version history</div>

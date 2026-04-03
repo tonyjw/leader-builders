@@ -1,9 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
 import SkillCard from '../components/SkillCard.astro';
-import { getAllSkills, CATEGORIES } from '../lib/skills';
+import { getAllSkills } from '../lib/skills';
+import { createSearchIndex, serializeIndex } from '../lib/searchIndex';
 
 const skills = getAllSkills();
+const searchIndex = createSearchIndex(skills);
+const serializedIndex = serializeIndex(searchIndex);
 ---
 
 <Base
@@ -25,33 +28,96 @@ const skills = getAllSkills();
     </p>
   </section>
 
-  <div class="filter-bar" role="group" aria-label="Filter by category">
-    <button class="filter-btn active" data-category="all">All</button>
-    {Object.entries(CATEGORIES).map(([slug, label]) => (
-      <button class="filter-btn" data-category={slug}>{label}</button>
-    ))}
+  <div class="search-container">
+    <input
+      type="text"
+      id="skill-search"
+      class="search-input"
+      placeholder="Describe your situation..."
+      aria-label="Search skills"
+    />
   </div>
 
-  <div class="card-grid">
+  <div class="card-grid" id="skills-grid">
     {skills.map(skill => <SkillCard skill={skill} showCategory={true} />)}
+  </div>
+
+  <div id="no-results" class="no-results" style="display: none;">
+    <p>No skills match your search. Try different keywords.</p>
   </div>
 </Base>
 
+<script define:vars={{ serializedIndex }}>
+  // Embed the search index as a JavaScript variable
+  window.searchIndex = serializedIndex;
+</script>
+
+<script src="/lunr.js" is:inline></script>
+
 <script>
-  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
-  const cards = document.querySelectorAll<HTMLElement>('.skill-card');
+  // Initialize search after Lunr loads
+  window.addEventListener('load', () => {
+    // Get the serialized index from the global variable
+    const serializedIndex = window.searchIndex;
+    
+    function initializeSearch(serializedIndex) {
+      const searchInput = document.getElementById('skill-search');
+      const cards = document.querySelectorAll('.skill-card');
+      const noResultsMessage = document.getElementById('no-results');
+      const skillsGrid = document.getElementById('skills-grid');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const category = btn.dataset.category ?? 'all';
+      if (!searchInput) return;
 
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      // Deserialize the Lunr index
+      const index = lunr.Index.load(JSON.parse(serializedIndex));
 
-      cards.forEach(card => {
-        const match = category === 'all' || card.dataset.category === category;
-        card.style.display = match ? '' : 'none';
-      });
-    });
+      function performSearch() {
+        const query = searchInput.value.trim();
+        let visibleCount = 0;
+        let matchedSlugs = new Set();
+
+        if (query === '') {
+          // Show all cards if search is empty
+          cards.forEach(card => {
+            card.style.display = '';
+            visibleCount++;
+          });
+        } else {
+          // Search using Lunr
+          try {
+            const results = index.search(query);
+            matchedSlugs = new Set(results.map(r => r.ref));
+          } catch (e) {
+            // If Lunr query fails (e.g., special characters), fall back to empty results
+            matchedSlugs = new Set();
+          }
+
+          cards.forEach(card => {
+            const slug = card.dataset.slug;
+            if (matchedSlugs.has(slug || '')) {
+              card.style.display = '';
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        }
+
+        // Show/hide no results message
+        if (noResultsMessage && skillsGrid) {
+          if (visibleCount === 0 && query !== '') {
+            noResultsMessage.style.display = 'block';
+            skillsGrid.style.display = 'none';
+          } else {
+            noResultsMessage.style.display = 'none';
+            skillsGrid.style.display = 'grid';
+          }
+        }
+      }
+
+      searchInput.addEventListener('input', performSearch);
+    }
+
+    initializeSearch(serializedIndex);
   });
 </script>

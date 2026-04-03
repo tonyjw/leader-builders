@@ -10,12 +10,6 @@ tags: [retrospective, agile, facilitation, team-health, continuous-improvement]
 difficulty: intermediate
 works-with: [all]
 
-evidence-strength: moderate
-evidence-types: [practitioner, field]
-primary-sources:
-  - "Derby & Larsen, Agile Retrospectives, 2006"
-  - "Kerth, Project Retrospectives, 2001"
-
 when-to-use: >
   At the end of a sprint, quarter, or project cycle when you want a structured
   retrospective that produces real action items — not a venting session that

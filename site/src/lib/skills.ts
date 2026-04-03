@@ -27,9 +27,6 @@ export interface SkillFrontmatter {
   tags: string[];
   difficulty: string;
   'works-with': string[];
-  'evidence-strength': string;
-  'evidence-types': string[];
-  'primary-sources': string[];
   'when-to-use': string;
   'not-for'?: string;
   'time-to-run'?: string;
@@ -112,20 +109,8 @@ function addCiteElements(md: string): string {
   return md.replace(/\[([A-Za-z][^[\]\n]+?,\s*\d{4})\]/g, '<cite>[$1]</cite>');
 }
 
-/** Replace source type tags with styled badge spans */
-function addSourceBadges(md: string): string {
-  return md
-    .replace(/\[research\]/g, '<span class="badge badge-research">research</span>')
-    .replace(/\[practitioner\]/g, '<span class="badge badge-practitioner">practitioner</span>')
-    .replace(/\[field\]/g, '<span class="badge badge-field">field</span>');
-}
-
 export function renderMarkdown(md: string): string {
   return String(marked.parse(addCiteElements(md)));
-}
-
-export function renderSources(md: string): string {
-  return String(marked.parse(addCiteElements(addSourceBadges(md))));
 }
 
 /** Parse failure modes section into name + body pairs */
@@ -172,17 +157,6 @@ export function getSkillBySlug(slug: string): Skill | undefined {
 
 export function getSkillsByCategory(category: string): Skill[] {
   return getAllSkills().filter(s => s.frontmatter.category === category);
-}
-
-/** Maps evidence-strength value to its CSS class suffix. Falls back to 'emerging'. */
-export function strengthClass(strength: string): string {
-  return strength === 'strong' || strength === 'moderate' ? strength : 'emerging';
-}
-
-export function evidenceIcon(type: string): string {
-  if (type === 'research') return '⚗';
-  if (type === 'practitioner') return '◉';
-  return '◎';
 }
 
 export function truncate(str: string, n: number): string {

@@ -10,13 +10,6 @@ tags: [feedback, performance, difficult-conversations, coaching, psychological-s
 difficulty: intermediate
 works-with: [all]
 
-evidence-strength: strong
-evidence-types: [research, practitioner]
-primary-sources:
-  - "Kluger & DeNisi, Feedback Interventions, Psychological Bulletin, 1996"
-  - "Stone & Heen, Thanks for the Feedback, 2014"
-  - "Hogan, Resilient Management, 2019"
-
 when-to-use: >
   Before a feedback conversation where the person is unlikely to receive the
   message well — underperformance, behavior patterns, missed expectations, or

@@ -10,12 +10,6 @@ tags: [skip-level, career, executive-communication, visibility, stakeholders]
 difficulty: intermediate
 works-with: [all]
 
-evidence-strength: moderate
-evidence-types: [practitioner, field]
-primary-sources:
-  - "Hogan, Resilient Management, 2019"
-  - "Widely documented in engineering leadership practitioner literature"
-
 when-to-use: >
   Before a scheduled or spontaneous conversation with your manager's manager —
   whether it's a routine check-in or a high-stakes meeting — when you want to

@@ -10,12 +10,6 @@ tags: [hiring, job-description, recruiting, engineering-manager, talent]
 difficulty: intermediate
 works-with: [all]
 
-evidence-strength: moderate
-evidence-types: [practitioner, field]
-primary-sources:
-  - "Hogan, Resilient Management, 2019"
-  - "Larson, An Elegant Puzzle, 2019"
-
 when-to-use: >
   When you need to write a job description for an engineering manager role that
   will attract qualified candidates and accurately represent the job — not a

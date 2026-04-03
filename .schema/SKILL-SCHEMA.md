@@ -53,28 +53,6 @@ works-with: [required]
   # List: [claude, chatgpt, gemini] or [all]
   # Note any model-specific behavior in prompt-notes below
 
-# ── Evidence metadata ─────────────────────────────────────
-evidence-strength: [required]
-  # strong | moderate | emerging
-  # strong = multiple reputable sources + practitioner consensus
-  # moderate = solid practitioner evidence, limited formal research
-  # emerging = newer practice, limited evidence base — flagged on site
-
-evidence-types: [required]
-  # List of types present in this skill's evidence section.
-  # research | practitioner | field
-  # research = peer-reviewed or institutional studies
-  # practitioner = books, essays, frameworks from recognized practitioners
-  # field = documented real-world outcomes (attributed or anonymized)
-
-primary-sources: [required]
-  # List of the 1–3 most important sources backing this skill.
-  # These appear as prominent citations on the web page.
-  # Format: "Author, Title, Year" or "Author, Publication, Year"
-  # e.g.
-  #   - "Kluger & DeNisi, Feedback Interventions, 1996"
-  #   - "Scott, Radical Candor, 2017"
-
 # ── Usage metadata ────────────────────────────────────────
 when-to-use: [required]
   # 1–2 sentence description of the specific situation this addresses.
@@ -236,9 +214,7 @@ Each entry explains:
 |---|---|
 | `title` | Page H1, card title |
 | `when-to-use` | Card subtitle, page lede |
-| `difficulty` + `evidence-strength` | Badges on card and page header |
-| `evidence-types` | Icon indicators (flask/book/person) on page header |
-| `primary-sources` | Highlighted citation block near top of page |
+| `difficulty` | Badge on card and page header |
 | `## The reasoning` | Full-width editorial section, above the prompt |
 | `## The prompt` | Syntax-highlighted copy block with one-click copy |
 | `## Variables` | Interactive variable table with inline editing (phase 2) |

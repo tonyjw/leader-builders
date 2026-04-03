@@ -10,12 +10,6 @@ tags: [psychological-safety, team-health, new-manager, trust, culture]
 difficulty: intermediate
 works-with: [all]
 
-evidence-strength: strong
-evidence-types: [research, practitioner]
-primary-sources:
-  - "Edmondson, Psychological Safety and Learning Behavior in Work Teams, 1999"
-  - "Edmondson, The Fearless Organization, 2018"
-
 when-to-use: >
   When you're new to a team, inheriting a team that has low trust or low
   candor, or when you've observed that people aren't raising problems, aren't

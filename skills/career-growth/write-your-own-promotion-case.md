@@ -10,12 +10,6 @@ tags: [promotion, career-growth, self-advocacy, leveling, staff-engineer]
 difficulty: intermediate
 works-with: [all]
 
-evidence-strength: moderate
-evidence-types: [practitioner, field]
-primary-sources:
-  - "Reilly, The Staff Engineer's Path, 2022"
-  - "Larson, An Elegant Puzzle, 2019"
-
 when-to-use: >
   When you're building a written case for your own promotion — either as a
   self-nomination document, a packet for a calibration committee, or prep

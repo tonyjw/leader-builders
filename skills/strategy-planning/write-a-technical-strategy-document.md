@@ -10,12 +10,6 @@ tags: [strategy, technical-vision, architecture, roadmap, engineering-leadership
 difficulty: advanced
 works-with: [claude, chatgpt]
 
-evidence-strength: moderate
-evidence-types: [practitioner]
-primary-sources:
-  - "Larson, An Elegant Puzzle, 2019"
-  - "Reilly, The Staff Engineer's Path, 2022"
-
 when-to-use: >
   When your team or organization needs a written technical direction document —
   to align engineering on approach, make tradeoffs legible to stakeholders, or

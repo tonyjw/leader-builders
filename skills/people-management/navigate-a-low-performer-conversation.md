@@ -10,12 +10,6 @@ tags: [performance, difficult-conversations, coaching, pip, feedback]
 difficulty: advanced
 works-with: [all]
 
-evidence-strength: moderate
-evidence-types: [practitioner, field]
-primary-sources:
-  - "Scott, Radical Candor, 2017"
-  - "Grote, Discipline Without Punishment, 2006"
-
 when-to-use: >
   When you need to have a direct conversation with someone about sustained
   underperformance — after earlier feedback hasn't produced change, or when

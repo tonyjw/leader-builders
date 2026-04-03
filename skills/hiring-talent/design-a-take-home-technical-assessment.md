@@ -10,12 +10,6 @@ tags: [hiring, assessment, technical-interview, take-home, evaluation]
 difficulty: intermediate
 works-with: [all]
 
-evidence-strength: moderate
-evidence-types: [research, practitioner, field]
-primary-sources:
-  - "Schmidt & Hunter, The Validity and Utility of Selection Methods in Personnel Psychology, 1998"
-  - "Widely documented in engineering hiring practitioner literature"
-
 when-to-use: >
   When designing or redesigning a take-home coding assignment for engineering
   candidates — you need something that tests the right things, respects the

@@ -1,0 +1,50 @@
+---
+import Base from '../../layouts/Base.astro';
+import { CATEGORIES, getSkillsByCategory, strengthClass, truncate } from '../../lib/skills';
+
+export function getStaticPaths() {
+  return Object.keys(CATEGORIES).map(category => ({
+    params: { category },
+  }));
+}
+
+const { category } = Astro.params;
+const label = CATEGORIES[category!] ?? category;
+const skills = getSkillsByCategory(category!);
+---
+
+<Base
+  title={label}
+  description={`Evidence-backed skills for engineering leaders: ${label}`}
+>
+  <div class="category-header">
+    <div class="breadcrumb">
+      <a href="/">All skills</a>
+    </div>
+    <h1>{label}</h1>
+    <p style="color: var(--color-text-muted)">
+      {skills.length} skill{skills.length !== 1 ? 's' : ''}
+    </p>
+  </div>
+
+  <div class="card-grid">
+    {skills.map(skill => (
+      <a
+        href={`/skills/${skill.slug}/`}
+        class="skill-card"
+        data-category={skill.frontmatter.category}
+      >
+        <div class="skill-card__title">{skill.frontmatter.title}</div>
+        <p class="skill-card__desc">
+          {truncate(skill.frontmatter['when-to-use'].replace(/\n/g, ' '), 120)}
+        </p>
+        <div class="skill-card__badges">
+          <span class="badge badge-difficulty">{skill.frontmatter.difficulty}</span>
+          <span class={`badge badge-${strengthClass(skill.frontmatter['evidence-strength'])}`}>
+            {skill.frontmatter['evidence-strength']}
+          </span>
+        </div>
+      </a>
+    ))}
+  </div>
+</Base>

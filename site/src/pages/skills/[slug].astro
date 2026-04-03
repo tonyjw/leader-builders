@@ -1,0 +1,192 @@
+---
+import Base from '../../layouts/Base.astro';
+import {
+  getAllSkills,
+  getSkillBySlug,
+  CATEGORIES,
+  renderMarkdown,
+  renderSources,
+  parseFailureModes,
+  strengthClass,
+  evidenceIcon,
+} from '../../lib/skills';
+
+export function getStaticPaths() {
+  return getAllSkills().map(skill => ({
+    params: { slug: skill.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const skill = getSkillBySlug(slug!);
+
+if (!skill) {
+  return Astro.redirect('/');
+}
+
+const { frontmatter, sections } = skill;
+const fm = frontmatter;
+
+const categoryLabel = CATEGORIES[fm.category] ?? fm.category;
+const failureModes = parseFailureModes(sections.failureModes);
+
+const reasoningHtml = renderMarkdown(sections.reasoning);
+const variablesHtml = renderMarkdown(sections.variables);
+const goodOutputHtml = renderMarkdown(sections.goodOutput);
+const poorOutputHtml = renderMarkdown(sections.poorOutput);
+const promptNotesHtml = sections.promptNotes ? renderMarkdown(sections.promptNotes) : '';
+const sourcesHtml = renderSources(sections.sources);
+const changelogHtml = renderMarkdown(sections.changelogBody);
+---
+
+<Base
+  title={fm.title}
+  description={fm['when-to-use'].replace(/\n/g, ' ')}
+>
+  <!-- 1. HEADER -->
+  <div class="skill-header">
+    <div class="breadcrumb">
+      <a href="/">All skills</a>
+      &nbsp;/&nbsp;
+      <a href={`/${fm.category}/`}>{categoryLabel}</a>
+    </div>
+
+    <h1>{fm.title}</h1>
+
+    <div class="badge-row">
+      <span class="badge badge-difficulty">{fm.difficulty}</span>
+      <span class={`badge badge-${strengthClass(fm['evidence-strength'])}`}>
+        {fm['evidence-strength']} evidence
+      </span>
+      <span class="evidence-icons" title="Evidence types">
+        {fm['evidence-types'].map(t => evidenceIcon(t)).join(' ')}
+      </span>
+    </div>
+  </div>
+
+  <!-- 2. LEDE -->
+  <p class="skill-lede">{fm['when-to-use'].replace(/\n/g, ' ')}</p>
+
+  <!-- 3. NOT-FOR WARNING -->
+  {fm['not-for'] && (
+    <div class="not-for-box">
+      <div class="not-for-box__label">Not for:</div>
+      <div>{fm['not-for'].replace(/\n/g, ' ')}</div>
+    </div>
+  )}
+
+  <!-- 4. PRIMARY SOURCES BLOCK -->
+  <aside class="sources-aside">
+    <div class="sources-aside__label">Key sources behind this skill</div>
+    <ul>
+      {fm['primary-sources'].map(source => (
+        <li>{source}</li>
+      ))}
+    </ul>
+  </aside>
+
+  <!-- 5. REASONING -->
+  <section>
+    <div class="section-label">The reasoning</div>
+    <div class="prose" set:html={reasoningHtml} />
+  </section>
+
+  <!-- 6. PROMPT -->
+  <section>
+    <div class="section-label">The prompt</div>
+    <div class="prompt-block">
+      <button class="copy-btn" data-prompt={sections.promptCode}>Copy</button>
+      <pre><code>{sections.promptCode}</code></pre>
+    </div>
+  </section>
+
+  <!-- 7. VARIABLES -->
+  {sections.variables && (
+    <section>
+      <div class="section-label">Variables</div>
+      <div class="variables-section prose" set:html={variablesHtml} />
+    </section>
+  )}
+
+  <!-- 8. GOOD OUTPUT (collapsible) -->
+  {sections.goodOutput && (
+    <details>
+      <summary>See what good output looks like</summary>
+      <div class="prose" set:html={goodOutputHtml} />
+    </details>
+  )}
+
+  <!-- 9. POOR OUTPUT (collapsible) -->
+  {sections.poorOutput && (
+    <details>
+      <summary>See what poor output looks like — and why</summary>
+      <div class="prose" set:html={poorOutputHtml} />
+    </details>
+  )}
+
+  <!-- 10. FAILURE MODES -->
+  {failureModes.length > 0 && (
+    <section>
+      <div class="section-label">Failure modes</div>
+      <div class="failure-modes-list">
+        {failureModes.map(mode => (
+          <div class="failure-mode">
+            <div class="failure-mode__name">{mode.name}</div>
+            <p class="failure-mode__body">{mode.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- 11. PROMPT NOTES -->
+  {promptNotesHtml && (
+    <section>
+      <div class="section-label">Model notes</div>
+      <div class="prose" set:html={promptNotesHtml} />
+    </section>
+  )}
+
+  <!-- 12. SOURCES -->
+  {sections.sources && (
+    <section>
+      <div class="section-label">Sources</div>
+      <div class="sources-list prose" set:html={sourcesHtml} />
+    </section>
+  )}
+
+  <!-- 13. CHANGELOG -->
+  {fm.changelog && fm.changelog.length > 0 && (
+    <section>
+      <div class="section-label">Version history</div>
+      <div class="changelog-list">
+        {fm.changelog.map(entry => (
+          <div class="changelog-entry">
+            <div class="changelog-entry__meta">
+              <span class="changelog-entry__version">v{entry.version}</span>
+              {entry.date}
+            </div>
+            <div>{entry.changes}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+</Base>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.copy-btn');
+  if (btn) {
+    btn.addEventListener('click', async () => {
+      const text = btn.dataset.prompt ?? '';
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+      } catch {
+        btn.textContent = 'Copy failed';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+      }
+    });
+  }
+</script>

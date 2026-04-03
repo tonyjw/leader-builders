@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import { getAllSkills, CATEGORIES, strengthClass, truncate } from '../lib/skills';
+
+const skills = getAllSkills();
+---
+
+<Base
+  title="Evidence-backed skills for engineering leaders"
+  description="A structured skill library for engineering managers and leaders. Every skill includes a prompt, evidence-backed reasoning, and failure modes."
+>
+  <section class="hero">
+    <h1>eng.builders</h1>
+    <p class="hero__tagline">Evidence-backed skills for engineering leaders</p>
+    <p class="hero__desc">
+      A library of structured prompts for engineering managers and leaders.
+      Every skill comes with the reasoning behind it — grounded in research and
+      practitioner experience — so you understand not just what to do, but why.
+    </p>
+    <p class="hero__link">
+      <a href="https://github.com/tonyennis145/eng-builders" target="_blank" rel="noopener">
+        View on GitHub &rarr;
+      </a>
+    </p>
+  </section>
+
+  <div class="filter-bar" role="group" aria-label="Filter by category">
+    <button class="filter-btn active" data-category="all">All</button>
+    {Object.entries(CATEGORIES).map(([slug, label]) => (
+      <button class="filter-btn" data-category={slug}>{label}</button>
+    ))}
+  </div>
+
+  <div class="card-grid">
+    {skills.map(skill => (
+      <a
+        href={`/skills/${skill.slug}/`}
+        class="skill-card"
+        data-category={skill.frontmatter.category}
+      >
+        <div class="skill-card__title">{skill.frontmatter.title}</div>
+        <p class="skill-card__desc">
+          {truncate(skill.frontmatter['when-to-use'].replace(/\n/g, ' '), 120)}
+        </p>
+        <div class="skill-card__badges">
+          <span class="badge badge-difficulty">{skill.frontmatter.category.replace(/-/g, '\u00a0')}</span>
+          <span class="badge badge-difficulty">{skill.frontmatter.difficulty}</span>
+          <span class={`badge badge-${strengthClass(skill.frontmatter['evidence-strength'])}`}>
+            {skill.frontmatter['evidence-strength']}
+          </span>
+        </div>
+      </a>
+    ))}
+  </div>
+</Base>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const cards = document.querySelectorAll<HTMLElement>('.skill-card');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.category ?? 'all';
+
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      cards.forEach(card => {
+        const match = category === 'all' || card.dataset.category === category;
+        (card as HTMLElement).style.display = match ? '' : 'none';
+      });
+    });
+  });
+</script>

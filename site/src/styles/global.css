@@ -241,55 +241,60 @@ details > *:not(summary) {
   margin: 0.5rem 0;
 }
 
-/* ── Cards ──────────────────────────────────────────── */
-.card-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+/* ── Skill tree ─────────────────────────────────────── */
+.skill-tree {
   margin: 1.5rem 0;
 }
 
-@media (min-width: 640px) {
-  .card-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.skill-tree__category {
+  margin-bottom: 2rem;
 }
 
-.skill-card {
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  padding: 1.25rem;
-  background: var(--color-bg);
-  transition: border-color 0.15s;
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.skill-card:hover {
-  border-color: #a1a1a1;
-  text-decoration: none;
-}
-
-.skill-card__title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-text);
-  margin: 0 0 0.4rem;
-  line-height: 1.35;
-}
-
-.skill-card__desc {
-  font-size: 0.875rem;
+.skill-tree__heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--color-text-muted);
-  line-height: 1.5;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.skill-card__badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
+.skill-tree__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-tree__item {
+  padding: 0.35rem 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.skill-tree__item a {
+  color: var(--color-accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.skill-tree__item a:hover {
+  text-decoration: underline;
+}
+
+.skill-tree__sep {
+  color: var(--color-text-muted);
+  margin: 0 0.1em;
+}
+
+.skill-tree__desc {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.is-hidden {
+  display: none;
 }
 
 /* ── Search bar ─────────────────────────────────────── */

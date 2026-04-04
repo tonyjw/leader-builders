@@ -1,6 +1,5 @@
 ---
 import Base from '../../layouts/Base.astro';
-import SkillCard from '../../components/SkillCard.astro';
 import { CATEGORIES, getSkillsByCategory } from '../../lib/skills';
 
 export function getStaticPaths() {
@@ -28,7 +27,13 @@ const skills = getSkillsByCategory(category!);
     </p>
   </div>
 
-  <div class="card-grid">
-    {skills.map(skill => <SkillCard skill={skill} showCategory={false} />)}
-  </div>
+  <ul class="skill-tree__list">
+    {skills.map(skill => (
+      <li class="skill-tree__item">
+        <a href={`/skills/${skill.slug}/`}>{skill.frontmatter.title}</a>
+        <span class="skill-tree__sep"> — </span>
+        <span class="skill-tree__desc">{skill.frontmatter['when-to-use']}</span>
+      </li>
+    ))}
+  </ul>
 </Base>

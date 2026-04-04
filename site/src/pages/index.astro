@@ -1,12 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
-import SkillCard from '../components/SkillCard.astro';
-import { getAllSkills } from '../lib/skills';
+import { getAllSkills, CATEGORIES } from '../lib/skills';
 import { createSearchIndex, serializeIndex } from '../lib/searchIndex';
 
 const skills = getAllSkills();
 const searchIndex = createSearchIndex(skills);
 const serializedIndex = serializeIndex(searchIndex);
+
+const grouped = Object.entries(CATEGORIES)
+  .map(([key, label]) => ({
+    key,
+    label,
+    skills: skills.filter(s => s.frontmatter.category === key),
+  }))
+  .filter(g => g.skills.length > 0);
 ---
 
 <Base
@@ -38,8 +45,21 @@ const serializedIndex = serializeIndex(searchIndex);
     />
   </div>
 
-  <div class="card-grid" id="skills-grid">
-    {skills.map(skill => <SkillCard skill={skill} showCategory={true} />)}
+  <div class="skill-tree" id="skills-tree">
+    {grouped.map(({ key, label, skills }) => (
+      <div class="skill-tree__category" data-category={key}>
+        <h2 class="skill-tree__heading">{label}</h2>
+        <ul class="skill-tree__list">
+          {skills.map(skill => (
+            <li class="skill-tree__item" data-slug={skill.slug}>
+              <a href={`/skills/${skill.slug}/`}>{skill.frontmatter.title}</a>
+              <span class="skill-tree__sep"> — </span>
+              <span class="skill-tree__desc">{skill.frontmatter['when-to-use']}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
   </div>
 
   <div id="no-results" class="no-results" style="display: none;">
@@ -48,76 +68,49 @@ const serializedIndex = serializeIndex(searchIndex);
 </Base>
 
 <script define:vars={{ serializedIndex }}>
-  // Embed the search index as a JavaScript variable
   window.searchIndex = serializedIndex;
 </script>
 
 <script src="/lunr.js" is:inline></script>
 
 <script>
-  // Initialize search after Lunr loads
   window.addEventListener('load', () => {
-    // Get the serialized index from the global variable
     const serializedIndex = window.searchIndex;
-    
-    function initializeSearch(serializedIndex) {
-      const searchInput = document.getElementById('skill-search');
-      const cards = document.querySelectorAll('.skill-card');
-      const noResultsMessage = document.getElementById('no-results');
-      const skillsGrid = document.getElementById('skills-grid');
+    const searchInput = document.getElementById('skill-search');
+    const noResults = document.getElementById('no-results');
+    const tree = document.getElementById('skills-tree');
+    if (!searchInput || !tree) return;
 
-      if (!searchInput) return;
+    const index = lunr.Index.load(JSON.parse(serializedIndex));
 
-      // Deserialize the Lunr index
-      const index = lunr.Index.load(JSON.parse(serializedIndex));
+    function performSearch() {
+      const query = searchInput.value.trim();
+      const items = tree.querySelectorAll('.skill-tree__item');
+      let totalVisible = 0;
 
-      function performSearch() {
-        const query = searchInput.value.trim();
-        let visibleCount = 0;
+      if (query === '') {
+        items.forEach(item => { item.classList.remove('is-hidden'); totalVisible++; });
+        tree.querySelectorAll('.skill-tree__category').forEach(cat => cat.classList.remove('is-hidden'));
+      } else {
         let matchedSlugs = new Set();
+        try { matchedSlugs = new Set(index.search(query).map(r => r.ref)); } catch (e) {}
 
-        if (query === '') {
-          // Show all cards if search is empty
-          cards.forEach(card => {
-            card.style.display = '';
-            visibleCount++;
-          });
-        } else {
-          // Search using Lunr
-          try {
-            const results = index.search(query);
-            matchedSlugs = new Set(results.map(r => r.ref));
-          } catch (e) {
-            // If Lunr query fails (e.g., special characters), fall back to empty results
-            matchedSlugs = new Set();
-          }
+        items.forEach(item => {
+          const visible = matchedSlugs.has(item.dataset.slug || '');
+          item.classList.toggle('is-hidden', !visible);
+          if (visible) totalVisible++;
+        });
 
-          cards.forEach(card => {
-            const slug = card.dataset.slug;
-            if (matchedSlugs.has(slug || '')) {
-              card.style.display = '';
-              visibleCount++;
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        }
-
-        // Show/hide no results message
-        if (noResultsMessage && skillsGrid) {
-          if (visibleCount === 0 && query !== '') {
-            noResultsMessage.style.display = 'block';
-            skillsGrid.style.display = 'none';
-          } else {
-            noResultsMessage.style.display = 'none';
-            skillsGrid.style.display = 'grid';
-          }
-        }
+        tree.querySelectorAll('.skill-tree__category').forEach(cat => {
+          const hasVisible = cat.querySelectorAll('.skill-tree__item:not(.is-hidden)').length > 0;
+          cat.classList.toggle('is-hidden', !hasVisible);
+        });
       }
 
-      searchInput.addEventListener('input', performSearch);
+      if (noResults) noResults.style.display = totalVisible === 0 && query !== '' ? 'block' : 'none';
+      tree.style.display = totalVisible === 0 && query !== '' ? 'none' : '';
     }
 
-    initializeSearch(serializedIndex);
+    searchInput.addEventListener('input', performSearch);
   });
 </script>

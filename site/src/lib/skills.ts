@@ -105,6 +105,67 @@ export function renderMarkdown(md: string): string {
   return String(marked.parse(addCiteElements(md)));
 }
 
+// ── Variable parsing ─────────────────────────────────────────────
+
+export interface ParsedVariable {
+  /** All {{VAR}} names covered by this entry (handles "X through Y" groups) */
+  names: string[];
+  description: string;
+  example: string;
+  required: boolean;
+}
+
+/**
+ * Parse the ## Variables markdown section into structured variable objects.
+ * Each block starts with a line containing one or more `{{VAR_NAME}}` tokens.
+ */
+export function parseVariables(markdown: string): ParsedVariable[] {
+  if (!markdown.trim()) return [];
+
+  // Split on lines that start a new variable entry (begin with `{{)
+  const blocks = markdown.split(/\n(?=`\{\{)/).map(b => b.trim()).filter(Boolean);
+
+  return blocks.flatMap(block => {
+    const firstLine = block.split('\n')[0];
+    // Extract all {{VAR}} names from the first line
+    const names = [...firstLine.matchAll(/\{\{([A-Z0-9_]+)\}\}/g)].map(m => m[1]);
+    if (names.length === 0) return [];
+
+    // Description: text after the last ` — ` on the first line
+    const descMatch = firstLine.match(/—\s*(.+)$/);
+    const description = descMatch?.[1]?.trim() ?? '';
+
+    // Example: first line matching `Example: ...`
+    const exampleMatch = block.match(/Example:\s*`?([^`\n]+)`?/);
+    const example = exampleMatch?.[1]?.trim() ?? '';
+
+    // Required if block contains "Required" (and not exclusively "Optional")
+    const required = /Required/.test(block);
+
+    return [{ names, description, example, required }];
+  });
+}
+
+/**
+ * Render the prompt code as HTML with {{VARIABLE}} tokens replaced by
+ * interactive chip spans. Accepts a name→cardId map so grouped variables
+ * (e.g. OBS_2 → var-card-OBS_1) link to the correct card.
+ */
+export function renderPromptWithChips(
+  promptCode: string,
+  nameToCardId: Record<string, string>,
+): string {
+  const escaped = promptCode
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+
+  return escaped.replace(/\{\{([A-Z0-9_]+)\}\}/g, (_, name: string) => {
+    const cardId = nameToCardId[name] ?? `var-card-${name}`;
+    return `<span class="var-chip" data-var="${name}" data-card="${cardId}" id="chip-${name}">{{${name}}}</span>`;
+  });
+}
+
 
 // ── Data access ──────────────────────────────────────────────────
 

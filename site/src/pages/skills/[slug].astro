@@ -5,6 +5,8 @@ import {
   getSkillBySlug,
   CATEGORIES,
   renderMarkdown,
+  parseVariables,
+  renderPromptWithChips,
 } from '../../lib/skills';
 
 export function getStaticPaths() {
@@ -25,8 +27,15 @@ const { frontmatter: fm, sections } = skill;
 const categoryLabel = CATEGORIES[fm.category] ?? fm.category;
 
 const reasoningHtml = renderMarkdown(sections.reasoning);
-const variablesHtml = renderMarkdown(sections.variables);
-const sourcesHtml = renderMarkdown(sections.sources);
+
+// Build variable data and name→cardId map for chip rendering
+const parsedVars = parseVariables(sections.variables ?? '');
+const nameToCardId: Record<string, string> = {};
+for (const v of parsedVars) {
+  const cardId = `var-card-${v.names[0]}`;
+  for (const name of v.names) nameToCardId[name] = cardId;
+}
+const promptChipsHtml = renderPromptWithChips(sections.promptCode, nameToCardId);
 ---
 
 <Base
@@ -49,55 +58,62 @@ const sourcesHtml = renderMarkdown(sections.sources);
       </div>
     </div>
 
-    <!-- TWO-COLUMN GRID -->
+    <!-- FULL-WIDTH CONTEXT BAND -->
+    <div class="skill-context-band">
+      <section>
+        <div class="section-label">When to use</div>
+        <p class="skill-lede">{fm['when-to-use']}</p>
+      </section>
+
+      {fm['not-for'] && (
+        <section>
+          <div class="section-label">When not to use</div>
+          <div class="not-for-box">
+            <div>{fm['not-for']}</div>
+          </div>
+        </section>
+      )}
+
+      <section class="skill-context-band__reasoning">
+        <div class="section-label">The reasoning</div>
+        <div class="prose" set:html={reasoningHtml} />
+      </section>
+    </div>
+
+    <!-- TWO-COLUMN GRID: prompt + variable annotations -->
     <div class="skill-grid">
 
-      <!-- LEFT: Prompt -->
+      <!-- LEFT: Prompt with highlighted variable chips -->
       <div class="skill-grid__prompt">
         <section>
           <div class="section-label">The prompt</div>
           <div class="prompt-block">
             <button class="copy-btn" data-prompt={sections.promptCode}>Copy</button>
-            <pre><code>{sections.promptCode}</code></pre>
+            <div class="prompt-annotated" set:html={promptChipsHtml} />
           </div>
         </section>
-
-        {sections.variables && (
-          <section>
-            <div class="section-label">Variables</div>
-            <div class="prose" set:html={variablesHtml} />
-          </section>
-        )}
       </div>
 
-      <!-- RIGHT: Context -->
-      <div class="skill-grid__context">
-        <section>
-          <div class="section-label">When to use</div>
-          <p class="skill-lede">{fm['when-to-use']}</p>
-        </section>
-
-        {fm['not-for'] && (
-          <section>
-            <div class="section-label">When not to use</div>
-            <div class="not-for-box">
-              <div>{fm['not-for']}</div>
-            </div>
-          </section>
-        )}
-
-        <section>
-          <div class="section-label">The reasoning</div>
-          <div class="prose" set:html={reasoningHtml} />
-        </section>
-
-        {sections.sources && (
-          <section class="references-section">
-            <div class="section-label">References</div>
-            <div class="sources-list prose" set:html={sourcesHtml} />
-          </section>
-        )}
-      </div>
+      <!-- RIGHT: Aligned variable annotation cards -->
+      {parsedVars.length > 0 && (
+        <div class="skill-grid__vars">
+          <div class="section-label">Variables</div>
+          <div class="var-annotations" id="var-annotations">
+            {parsedVars.map(v => (
+              <div class="var-card" data-var={v.names[0]} id={`var-card-${v.names[0]}`}>
+                <div class="var-card__name">
+                  {v.names.map(n => `{{${n}}}`).join(' / ')}
+                </div>
+                <div class="var-card__desc">{v.description}</div>
+                {v.example && <div class="var-card__example">e.g. {v.example}</div>}
+                <span class={`var-card__badge${v.required ? '' : ' var-card__badge--optional'}`}>
+                  {v.required ? 'Required' : 'Optional'}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
 
     <!-- CHANGELOG: full width -->
@@ -127,6 +143,7 @@ const sourcesHtml = renderMarkdown(sections.sources);
 </style>
 
 <script>
+  // Copy button
   const btn = document.querySelector<HTMLButtonElement>('.copy-btn');
   if (btn) {
     btn.addEventListener('click', async () => {
@@ -141,4 +158,63 @@ const sourcesHtml = renderMarkdown(sections.sources);
       }
     });
   }
+
+  // Variable card alignment
+  function alignVarCards() {
+    const annotationsEl = document.getElementById('var-annotations');
+    if (!annotationsEl) return;
+
+    // On mobile (single column), let cards flow naturally
+    if (window.innerWidth <= 768) {
+      annotationsEl.style.height = '';
+      document.querySelectorAll<HTMLElement>('.var-card').forEach(card => {
+        card.style.position = 'static';
+        card.style.top = '';
+      });
+      return;
+    }
+
+    const annotationsRect = annotationsEl.getBoundingClientRect();
+    const GAP = 10;
+    let prevBottom = 0;
+    const seen = new Set<string>();
+
+    document.querySelectorAll<HTMLElement>('.var-chip').forEach(chip => {
+      const cardId = chip.dataset.card;
+      if (!cardId || seen.has(cardId)) return;
+      seen.add(cardId);
+
+      const card = document.getElementById(cardId) as HTMLElement | null;
+      if (!card) return;
+
+      // Ensure absolute positioning is set before measuring
+      card.style.position = 'absolute';
+
+      const chipRect = chip.getBoundingClientRect();
+      const idealTop = chipRect.top - annotationsRect.top;
+      const actualTop = Math.max(idealTop, prevBottom + GAP);
+
+      card.style.top = `${actualTop}px`;
+      prevBottom = actualTop + card.offsetHeight;
+    });
+
+    annotationsEl.style.height = `${prevBottom}px`;
+  }
+
+  // Hover sync between chips and their annotation cards
+  document.querySelectorAll<HTMLElement>('.var-chip').forEach(chip => {
+    const cardId = chip.dataset.card;
+    const card = cardId ? document.getElementById(cardId) : null;
+    chip.addEventListener('mouseenter', () => {
+      chip.classList.add('is-active');
+      card?.classList.add('is-active');
+    });
+    chip.addEventListener('mouseleave', () => {
+      chip.classList.remove('is-active');
+      card?.classList.remove('is-active');
+    });
+  });
+
+  alignVarCards();
+  window.addEventListener('resize', alignVarCards);
 </script>

@@ -475,6 +475,12 @@ details > *:not(summary) {
   margin: 1rem 0 2rem;
 }
 
+.prompt-block pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: visible;
+}
+
 .copy-btn {
   position: absolute;
   top: 0.75rem;

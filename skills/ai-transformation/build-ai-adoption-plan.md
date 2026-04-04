@@ -1,8 +1,6 @@
 ---
 title: Build an AI adoption plan for your engineering team
 slug: build-ai-adoption-plan
-version: 1.0
-last-updated: 2025-04-01
 status: active
 
 category: ai-transformation
@@ -23,10 +21,6 @@ not-for: >
 
 time-to-run: 20–30 minutes
 
-changelog:
-  - version: 1.0
-    date: 2025-04-01
-    changes: Initial release
 ---
 
 ## The reasoning
@@ -274,9 +268,3 @@ regulatory framework (HIPAA, SOC 2, GDPR, FedRAMP) rather than describing it
 generically.
 
 ---
-
-## Changelog
-
-### v1.0 — April 1, 2025
-Initial release. The field evidence entry is a single anonymized case; additional
-field cases will be added as community submissions are reviewed.

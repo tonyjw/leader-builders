@@ -1,8 +1,6 @@
 ---
 title: Build psychological safety on a new team
 slug: build-psychological-safety-on-a-new-team
-version: 1.0
-last-updated: 2026-04-03
 status: active
 
 category: people-management
@@ -23,10 +21,6 @@ not-for: >
 
 time-to-run: 15 minutes
 
-changelog:
-  - version: 1.0
-    date: 2026-04-03
-    changes: Initial release
 ---
 
 ## The reasoning
@@ -145,8 +139,3 @@ Teams with histories of low safety take months to shift, not weeks. If the previ
 Not all silence is psychological safety failure. If engineers are technically confident but not speaking up, check whether decisions are actually made in the meetings they're in — if the decision is already made before the meeting, silence is rational, not fearful.
 
 ---
-
-## Changelog
-
-### v1.0 — April 3, 2026
-Initial release.

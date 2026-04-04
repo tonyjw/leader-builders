@@ -116,23 +116,6 @@ const promptChipsHtml = renderPromptWithChips(sections.promptCode, nameToCardId)
       )}
     </div>
 
-    <!-- CHANGELOG: full width -->
-    {fm.changelog && fm.changelog.length > 0 && (
-      <section>
-        <div class="section-label">Version history</div>
-        <div class="changelog-list">
-          {fm.changelog.map(entry => (
-            <div class="changelog-entry">
-              <div class="changelog-entry__meta">
-                <span class="changelog-entry__version">v{entry.version}</span>
-                {entry.date}
-              </div>
-              <div>{entry.changes}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-    )}
   </div>
 </Base>
 

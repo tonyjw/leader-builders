@@ -1,8 +1,6 @@
 ---
 title: Design a take-home technical assessment
 slug: design-a-take-home-technical-assessment
-version: 1.0
-last-updated: 2026-04-03
 status: active
 
 category: hiring-talent
@@ -23,10 +21,6 @@ not-for: >
 
 time-to-run: 15 minutes
 
-changelog:
-  - version: 1.0
-    date: 2026-04-03
-    changes: Initial release
 ---
 
 ## The reasoning
@@ -164,8 +158,3 @@ Clean code in a 2-hour time-boxed assessment often predicts that the candidate h
 The take-home is the setup for a conversation, not a pass/fail gate on its own. Candidates who score well on the assessment but can't explain their own decisions in a follow-up are a warning sign. Build a structured review conversation into the process.
 
 ---
-
-## Changelog
-
-### v1.0 — April 3, 2026
-Initial release.

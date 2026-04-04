@@ -1,8 +1,6 @@
 ---
 title: Write your own promotion case
 slug: write-your-own-promotion-case
-version: 1.0
-last-updated: 2026-04-03
 status: active
 
 category: career-growth
@@ -22,10 +20,6 @@ not-for: >
 
 time-to-run: 20–30 minutes
 
-changelog:
-  - version: 1.0
-    date: 2026-04-03
-    changes: Initial release
 ---
 
 ## The reasoning
@@ -157,8 +151,3 @@ In most engineering organizations, promotion happens to people who advocate for 
 Every promotion case has a predictable weak point. If your case is "I did great work on one large project," the objection is "is this a pattern or a one-time thing?" Address it in the document rather than leaving it for the committee to raise unchallenged.
 
 ---
-
-## Changelog
-
-### v1.0 — April 3, 2026
-Initial release.

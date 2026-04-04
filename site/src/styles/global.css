@@ -476,9 +476,7 @@ details > *:not(summary) {
 }
 
 .prompt-block pre {
-  white-space: pre-wrap;
-  word-break: break-word;
-  overflow-x: visible;
+  font-size: 0.75rem;
 }
 
 .copy-btn {

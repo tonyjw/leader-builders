@@ -5,7 +5,6 @@ import {
   getSkillBySlug,
   CATEGORIES,
   renderMarkdown,
-  parseFailureModes,
 } from '../../lib/skills';
 
 export function getStaticPaths() {
@@ -24,13 +23,9 @@ if (!skill) {
 const { frontmatter: fm, sections } = skill;
 
 const categoryLabel = CATEGORIES[fm.category] ?? fm.category;
-const failureModes = parseFailureModes(sections.failureModes);
 
 const reasoningHtml = renderMarkdown(sections.reasoning);
 const variablesHtml = renderMarkdown(sections.variables);
-const goodOutputHtml = renderMarkdown(sections.goodOutput);
-const poorOutputHtml = renderMarkdown(sections.poorOutput);
-const promptNotesHtml = sections.promptNotes ? renderMarkdown(sections.promptNotes) : '';
 const sourcesHtml = renderMarkdown(sections.sources);
 ---
 
@@ -38,120 +33,98 @@ const sourcesHtml = renderMarkdown(sections.sources);
   title={fm.title}
   description={fm['when-to-use']}
 >
-  <!-- 1. HEADER -->
-  <div class="skill-header">
-    <div class="breadcrumb">
-      <a href="/">All skills</a>
-      &nbsp;/&nbsp;
-      <a href={`/${fm.category}/`}>{categoryLabel}</a>
-    </div>
-
-    <h1>{fm.title}</h1>
-
-    <div class="badge-row">
-      <span class="badge badge-difficulty">{fm.difficulty}</span>
-    </div>
-  </div>
-
-  <!-- 2. LEDE -->
-  <p class="skill-lede">{fm['when-to-use']}</p>
-
-  <!-- 3. NOT-FOR WARNING -->
-  {fm['not-for'] && (
-    <div class="not-for-box">
-      <div class="not-for-box__label">Not for:</div>
-      <div>{fm['not-for']}</div>
-    </div>
-  )}
-
-  <!-- 4. REASONING -->
-  <section>
-    <div class="section-label">The reasoning</div>
-    <div class="prose" set:html={reasoningHtml} />
-  </section>
-
-  <!-- 5. PROMPT -->
-  <section>
-    <div class="section-label">The prompt</div>
-    <div class="prompt-block">
-      <button class="copy-btn" data-prompt={sections.promptCode}>Copy</button>
-      <pre><code>{sections.promptCode}</code></pre>
-    </div>
-  </section>
-
-  <!-- 6. VARIABLES -->
-  {sections.variables && (
-    <section>
-      <div class="section-label">Variables</div>
-      <div class="prose" set:html={variablesHtml} />
-    </section>
-  )}
-
-  <!-- 7. GOOD OUTPUT (collapsible) -->
-  {sections.goodOutput && (
-    <details>
-      <summary>See what good output looks like</summary>
-      <div class="prose" set:html={goodOutputHtml} />
-    </details>
-  )}
-
-  <!-- 8. POOR OUTPUT (collapsible) -->
-  {sections.poorOutput && (
-    <details>
-      <summary>See what poor output looks like — and why</summary>
-      <div class="prose" set:html={poorOutputHtml} />
-    </details>
-  )}
-
-  <!-- 9. FAILURE MODES -->
-  {failureModes.length > 0 && (
-    <section>
-      <div class="section-label">Failure modes</div>
-      <div class="failure-modes-list">
-        {failureModes.map(mode => (
-          <div class="failure-mode">
-            <div class="failure-mode__name">{mode.name}</div>
-            <p class="failure-mode__body">{mode.body}</p>
-          </div>
-        ))}
+  <div class="skill-page">
+    <!-- HEADER -->
+    <div class="skill-header">
+      <div class="breadcrumb">
+        <a href="/">All skills</a>
+        &nbsp;/&nbsp;
+        <a href={`/${fm.category}/`}>{categoryLabel}</a>
       </div>
-    </section>
-  )}
 
-  <!-- 10. PROMPT NOTES -->
-  {promptNotesHtml && (
-    <section>
-      <div class="section-label">Model notes</div>
-      <div class="prose" set:html={promptNotesHtml} />
-    </section>
-  )}
+      <h1>{fm.title}</h1>
 
-  <!-- 11. SOURCES -->
-  {sections.sources && (
-    <section>
-      <div class="section-label">Sources</div>
-      <div class="sources-list prose" set:html={sourcesHtml} />
-    </section>
-  )}
+      <div class="badge-row">
+        <span class="badge badge-difficulty">{fm.difficulty}</span>
+      </div>
+    </div>
 
-  <!-- 12. CHANGELOG -->
-  {fm.changelog && fm.changelog.length > 0 && (
-    <section>
-      <div class="section-label">Version history</div>
-      <div class="changelog-list">
-        {fm.changelog.map(entry => (
-          <div class="changelog-entry">
-            <div class="changelog-entry__meta">
-              <span class="changelog-entry__version">v{entry.version}</span>
-              {entry.date}
+    <!-- TWO-COLUMN GRID -->
+    <div class="skill-grid">
+
+      <!-- LEFT: Prompt -->
+      <div class="skill-grid__prompt">
+        <section>
+          <div class="section-label">The prompt</div>
+          <div class="prompt-block">
+            <button class="copy-btn" data-prompt={sections.promptCode}>Copy</button>
+            <pre><code>{sections.promptCode}</code></pre>
+          </div>
+        </section>
+
+        {sections.variables && (
+          <section>
+            <div class="section-label">Variables</div>
+            <div class="prose" set:html={variablesHtml} />
+          </section>
+        )}
+      </div>
+
+      <!-- RIGHT: Context -->
+      <div class="skill-grid__context">
+        <section>
+          <div class="section-label">When to use</div>
+          <p class="skill-lede">{fm['when-to-use']}</p>
+        </section>
+
+        {fm['not-for'] && (
+          <section>
+            <div class="section-label">When not to use</div>
+            <div class="not-for-box">
+              <div>{fm['not-for']}</div>
             </div>
-            <div>{entry.changes}</div>
-          </div>
-        ))}
+          </section>
+        )}
+
+        <section>
+          <div class="section-label">The reasoning</div>
+          <div class="prose" set:html={reasoningHtml} />
+        </section>
+
+        {sections.sources && (
+          <section class="references-section">
+            <div class="section-label">References</div>
+            <div class="sources-list prose" set:html={sourcesHtml} />
+          </section>
+        )}
       </div>
-    </section>
-  )}
+    </div>
+
+    <!-- CHANGELOG: full width -->
+    {fm.changelog && fm.changelog.length > 0 && (
+      <section>
+        <div class="section-label">Version history</div>
+        <div class="changelog-list">
+          {fm.changelog.map(entry => (
+            <div class="changelog-entry">
+              <div class="changelog-entry__meta">
+                <span class="changelog-entry__version">v{entry.version}</span>
+                {entry.date}
+              </div>
+              <div>{entry.changes}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
 </Base>
+
+<style is:global>
+  body:has(.skill-page) .container {
+    max-width: 1160px;
+  }
+</style>
 
 <script>
   const btn = document.querySelector<HTMLButtonElement>('.copy-btn');

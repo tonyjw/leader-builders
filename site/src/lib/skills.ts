@@ -37,10 +37,6 @@ export interface SkillSections {
   reasoning: string;
   promptCode: string;   // raw text of the prompt (for copy button)
   variables: string;
-  goodOutput: string;
-  poorOutput: string;
-  failureModes: string;
-  promptNotes: string;
   sources: string;
   changelogBody: string;
 }
@@ -93,10 +89,6 @@ function extractSections(body: string): SkillSections {
     reasoning: sectionMap['The reasoning'] ?? '',
     promptCode,
     variables: sectionMap['Variables'] ?? '',
-    goodOutput: sectionMap['What good output looks like'] ?? '',
-    poorOutput: sectionMap['What poor output looks like \u2014 and why'] ?? '',
-    failureModes: sectionMap['Failure modes'] ?? '',
-    promptNotes: sectionMap['Prompt notes'] ?? '',
     sources: sectionMap['Sources'] ?? '',
     changelogBody: sectionMap['Changelog'] ?? '',
   };
@@ -113,18 +105,6 @@ export function renderMarkdown(md: string): string {
   return String(marked.parse(addCiteElements(md)));
 }
 
-/** Parse failure modes section into name + body pairs */
-export function parseFailureModes(md: string): Array<{ name: string; body: string }> {
-  const modes: Array<{ name: string; body: string }> = [];
-  const blocks = md.split(/\n(?=\*\*[^*]+\*\*)/);
-  for (const block of blocks) {
-    const match = block.match(/^\*\*([^*]+)\*\*\n?([\s\S]*)/);
-    if (match) {
-      modes.push({ name: match[1].trim(), body: match[2].trim() });
-    }
-  }
-  return modes;
-}
 
 // ── Data access ──────────────────────────────────────────────────
 

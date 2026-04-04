@@ -1,8 +1,6 @@
 ---
 title: Prioritize technical debt against product work
 slug: prioritize-technical-debt-against-product-work
-version: 1.0
-last-updated: 2026-04-03
 status: active
 
 category: strategy-planning
@@ -22,10 +20,6 @@ not-for: >
 
 time-to-run: 15–20 minutes
 
-changelog:
-  - version: 1.0
-    date: 2026-04-03
-    changes: Initial release
 ---
 
 ## The reasoning
@@ -146,8 +140,3 @@ Large allocation requests without specific high-interest debt items get rejected
 Not all debt needs to be addressed. Including low-interest, low-risk items in the prioritization conversation undermines credibility. The model produces a "can wait" list specifically so you can pre-empt the "why can't this wait?" question for items that can't.
 
 ---
-
-## Changelog
-
-### v1.0 — April 3, 2026
-Initial release.

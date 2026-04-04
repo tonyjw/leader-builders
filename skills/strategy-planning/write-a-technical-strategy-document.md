@@ -1,8 +1,6 @@
 ---
 title: Write a technical strategy document
 slug: write-a-technical-strategy-document
-version: 1.0
-last-updated: 2026-04-03
 status: active
 
 category: strategy-planning
@@ -22,10 +20,6 @@ not-for: >
 
 time-to-run: 20–30 minutes
 
-changelog:
-  - version: 1.0
-    date: 2026-04-03
-    changes: Initial release
 ---
 
 ## The reasoning
@@ -156,8 +150,3 @@ Without a "what we're not doing" section, the document will be read as endorsing
 A strategy document written for the CTO and read by ICs produces misalignment. Fill in `{{AUDIENCE}}` specifically — the level of technical detail and the framing of tradeoffs change significantly.
 
 ---
-
-## Changelog
-
-### v1.0 — April 3, 2026
-Initial release.

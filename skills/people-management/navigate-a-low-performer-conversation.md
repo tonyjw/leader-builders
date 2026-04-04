@@ -1,8 +1,6 @@
 ---
 title: Navigate a low-performer conversation
 slug: navigate-a-low-performer-conversation
-version: 1.0
-last-updated: 2026-04-03
 status: active
 
 category: people-management
@@ -24,10 +22,6 @@ not-for: >
 
 time-to-run: 15–20 minutes
 
-changelog:
-  - version: 1.0
-    date: 2026-04-03
-    changes: Initial release
 ---
 
 ## The reasoning
@@ -161,8 +155,3 @@ Mixing coaching language ("let's work on this together") with formal process lan
 In a formal process, undocumented conversations effectively didn't happen. The model will produce documentation guidance if you specify the formal stage. Do not skip this step — it protects both the manager and the report.
 
 ---
-
-## Changelog
-
-### v1.0 — April 3, 2026
-Initial release.

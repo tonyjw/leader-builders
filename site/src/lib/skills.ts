@@ -10,18 +10,9 @@ const rawFiles = import.meta.glob('../../../skills/**/*.md', {
 
 // ── Types ────────────────────────────────────────────────────────
 
-export interface ChangelogEntry {
-  version: string;
-  date: string;
-  changes: string;
-  reason?: string;
-}
-
 export interface SkillFrontmatter {
   title: string;
   slug: string;
-  version: string;
-  'last-updated': string;
   status: string;
   category: string;
   tags: string[];
@@ -30,7 +21,6 @@ export interface SkillFrontmatter {
   'when-to-use': string;
   'not-for'?: string;
   'time-to-run'?: string;
-  changelog: ChangelogEntry[];
 }
 
 export interface SkillSections {
@@ -38,7 +28,6 @@ export interface SkillSections {
   promptCode: string;   // raw text of the prompt (for copy button)
   variables: string;
   sources: string;
-  changelogBody: string;
 }
 
 export interface Skill {
@@ -90,7 +79,6 @@ function extractSections(body: string): SkillSections {
     promptCode,
     variables: sectionMap['Variables'] ?? '',
     sources: sectionMap['Sources'] ?? '',
-    changelogBody: sectionMap['Changelog'] ?? '',
   };
 }
 

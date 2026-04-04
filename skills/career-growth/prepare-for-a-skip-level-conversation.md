@@ -1,8 +1,6 @@
 ---
 title: Prepare for a skip-level conversation
 slug: prepare-for-a-skip-level-conversation
-version: 1.0
-last-updated: 2026-04-03
 status: active
 
 category: career-growth
@@ -23,10 +21,6 @@ not-for: >
 
 time-to-run: 10–15 minutes
 
-changelog:
-  - version: 1.0
-    date: 2026-04-03
-    changes: Initial release
 ---
 
 ## The reasoning
@@ -153,8 +147,3 @@ Surfacing challenges without framing them as "I'm flagging this early because I 
 A skip-level that sounds scripted is worse than an informal one. Use the output to understand your talking points and what you want to land — not to memorize a sequence.
 
 ---
-
-## Changelog
-
-### v1.0 — April 3, 2026
-Initial release.

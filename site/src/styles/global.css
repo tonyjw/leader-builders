@@ -371,6 +371,26 @@ details > *:not(summary) {
   margin: 0 0 1rem;
 }
 
+/* Full-width context band above the prompt grid */
+.skill-context-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Reasoning spans full width of the band */
+.skill-context-band__reasoning {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .skill-context-band {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
 /* Two-column skill layout */
 .skill-grid {
   display: grid;
@@ -381,13 +401,8 @@ details > *:not(summary) {
 }
 
 .skill-grid__prompt {
-  /* Prompt stays sticky on tall viewports */
   position: sticky;
   top: 1.5rem;
-}
-
-.skill-grid__context section {
-  margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -397,6 +412,99 @@ details > *:not(summary) {
   }
 
   .skill-grid__prompt {
+    position: static;
+  }
+}
+
+/* Prompt rendered as HTML with variable chips (replaces <pre><code>) */
+.prompt-annotated {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  font-family: 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  white-space: pre;
+  overflow-x: auto;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+
+/* {{VARIABLE}} chip tokens inside the prompt */
+.var-chip {
+  background: rgba(203, 166, 247, 0.18);
+  color: #cba6f7;
+  border-radius: 3px;
+  padding: 1px 3px;
+  cursor: default;
+  transition: background 0.15s;
+}
+.var-chip.is-active,
+.var-chip:hover {
+  background: rgba(203, 166, 247, 0.35);
+}
+
+/* Variable annotation cards (right column) */
+.var-annotations {
+  position: relative;
+}
+
+.var-card {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: var(--color-bg-subtle, #f8f8f6);
+  border: 1px solid var(--color-border, #e5e5e5);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.var-card.is-active {
+  border-color: #cba6f7;
+  box-shadow: 0 0 0 2px rgba(203, 166, 247, 0.2);
+}
+
+.var-card__name {
+  font-family: ui-monospace, monospace;
+  font-weight: 600;
+  color: #6c47a8;
+  margin-bottom: 0.25rem;
+  font-size: 0.78rem;
+}
+
+.var-card__desc {
+  color: var(--color-text, #444);
+  margin-bottom: 0.3rem;
+}
+
+.var-card__example {
+  color: var(--color-text-muted, #888);
+  font-style: italic;
+  margin-bottom: 0.3rem;
+}
+
+.var-card__badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #c05;
+}
+
+.var-card__badge--optional {
+  color: var(--color-text-muted, #888);
+}
+
+@media (max-width: 768px) {
+  .var-annotations {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .var-card {
     position: static;
   }
 }

@@ -1,8 +1,6 @@
 ---
 title: Run an effective team retrospective
 slug: run-an-effective-team-retrospective
-version: 1.0
-last-updated: 2026-04-03
 status: active
 
 category: people-management
@@ -22,10 +20,6 @@ not-for: >
 
 time-to-run: 15 minutes
 
-changelog:
-  - version: 1.0
-    date: 2026-04-03
-    changes: Initial release
 ---
 
 ## The reasoning
@@ -144,8 +138,3 @@ One engineer — often the most senior or most vocal — shapes the entire retro
 Items like "improve documentation" or "communicate better" appear on the action list and evaporate. Every item needs a single named owner. "The team" is not an owner. If the group can't agree on an owner, that's a signal the item isn't ready to be an action item yet.
 
 ---
-
-## Changelog
-
-### v1.0 — April 3, 2026
-Initial release.

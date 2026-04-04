@@ -1,8 +1,6 @@
 ---
 title: Prepare a difficult feedback conversation
 slug: prepare-difficult-feedback-conversation
-version: 1.1
-last-updated: 2025-04-01
 status: active
 
 category: people-management
@@ -22,18 +20,6 @@ not-for: >
 
 time-to-run: 10–15 minutes
 
-changelog:
-  - version: 1.1
-    date: 2025-04-01
-    changes: Added 'what I might be missing' prompt section and poor output example
-    reason: >
-      Early testers reported the v1.0 output was too confident in the manager's
-      framing. Adding the challenge-your-assumptions section produces more
-      balanced preparation and catches cases where the manager needs more
-      information before having the conversation.
-  - version: 1.0
-    date: 2025-02-15
-    changes: Initial release
 ---
 
 ## The reasoning
@@ -221,18 +207,3 @@ the output accordingly." The model will shift from first-person preparation to
 coaching framing.
 
 ---
-
-## Changelog
-
-### v1.1 — April 1, 2025
-Added a dedicated "challenge my framing" section to the prompt, and added the
-poor output example to the skill documentation.
-
-Early testing showed that v1.0 output was consistently too aligned with the
-manager's perspective — it took the situation at face value and prepared them
-to deliver the feedback more effectively without questioning whether the
-framing was right. Real difficult conversations often require the manager to
-examine their own assumptions first. The new section addresses this directly.
-
-### v1.0 — February 15, 2025
-Initial release. Core prompt structure and evidence section.

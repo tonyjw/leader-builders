@@ -1,8 +1,6 @@
 ---
 title: Frame AI ROI for non-technical leadership
 slug: frame-ai-roi-for-non-technical-leadership
-version: 1.0
-last-updated: 2026-04-03
 status: active
 
 category: ai-transformation
@@ -23,10 +21,6 @@ not-for: >
 
 time-to-run: 15–20 minutes
 
-changelog:
-  - version: 1.0
-    date: 2026-04-03
-    changes: Initial release
 ---
 
 ## The reasoning
@@ -152,8 +146,3 @@ Leadership will ask "what if this doesn't work?" If you haven't prepared an hone
 "We'll track adoption" is not a success criterion. Specify what number, measured how, by when — and what decision you'll make if you don't hit it. This signals that you're managing an investment, not running an experiment with no accountability.
 
 ---
-
-## Changelog
-
-### v1.0 — April 3, 2026
-Initial release.

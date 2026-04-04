@@ -1,8 +1,6 @@
 ---
 title: Write an engineering manager job description
 slug: write-an-engineering-manager-job-description
-version: 1.0
-last-updated: 2026-04-03
 status: active
 
 category: hiring-talent
@@ -22,10 +20,6 @@ not-for: >
 
 time-to-run: 15 minutes
 
-changelog:
-  - version: 1.0
-    date: 2026-04-03
-    changes: Initial release
 ---
 
 ## The reasoning
@@ -165,8 +159,3 @@ JDs that present only the opportunity and not the difficulty attract candidates 
 "Strong communication skills" and "passion for engineering" as requirements filter nothing. Must-haves should be things you would actually reject a candidate over in screening.
 
 ---
-
-## Changelog
-
-### v1.0 — April 3, 2026
-Initial release.

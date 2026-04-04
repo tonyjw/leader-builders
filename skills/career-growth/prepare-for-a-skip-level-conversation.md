@@ -31,7 +31,7 @@ changelog:
 
 ## The reasoning
 
-Skip-level conversations are high-stakes for a simple reason: they're sparse, so each one has outsized influence on how senior leaders perceive your work and your team [Hogan, 2019]. The preparation failure mode isn't being unprepared on facts — most managers know their own work. It's arriving without a clear sense of what impression you want to leave or what you need from the conversation. Widely documented in practitioner literature: managers who treat skip-levels as status updates leave as invisible as they arrived; those who arrive with a point of view and a specific ask use the time to build the relationship that matters for career advancement and organizational influence.
+Skip-level conversations are high-stakes for a simple reason: they're sparse, so each one has [outsized influence on how senior leaders perceive your work and your team](https://larahogan.me/blog/first-one-on-one-questions/). The preparation failure mode isn't being unprepared on facts — most managers know their own work. It's arriving without a clear sense of what impression you want to leave or what you need from the conversation. Widely documented in practitioner literature: managers who treat skip-levels as status updates leave as invisible as they arrived; those who arrive with a point of view and a specific ask use the time to build the relationship that matters for career advancement and organizational influence.
 
 ---
 
@@ -151,15 +151,6 @@ Surfacing challenges without framing them as "I'm flagging this early because I 
 
 **Over-rehearsing**
 A skip-level that sounds scripted is worse than an informal one. Use the output to understand your talking points and what you want to land — not to memorize a sequence.
-
----
-
-## Sources
-
-[practitioner] Hogan, L., *Resilient Management*, A Book Apart, 2019.
-Covers the manager's relationship with their own manager, including skip-level dynamics. Key insight: skip-level conversations are relationship-building moments that compound over time — each one either strengthens or weakens how you're perceived at the leadership level.
-
-[field] Anonymous, Engineering Manager, enterprise software company, 2024. Began deliberately preparing for skip-level 1:1s after noticing that a peer with comparable output was consistently described as "high potential" by the VP while they remained invisible. Preparation change: arrived with one specific business-framed talking point and one ask. After three prepared skip-levels, was mentioned in a promotion conversation they hadn't been part of previously.
 
 ---
 

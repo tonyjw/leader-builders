@@ -36,17 +36,14 @@ adoptions have always failed: the technical rollout is treated as the hard part,
 and the change management layer is treated as communication. They are not the same
 thing, and confusing them is expensive.
 
-The most relevant quantitative evidence here is GitHub's own research on Copilot
-adoption [Kalliamvakou, 2022], which found that developers using Copilot completed
-tasks 55% faster — but the variance in that number was enormous. Teams with low
+The most relevant quantitative evidence here is [GitHub's own research on Copilot adoption](https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/), which found that developers using Copilot completed tasks 55% faster — but the variance in that number was enormous. Teams with low
 adoption rates got little benefit; teams with high adoption rates exceeded the
 average significantly. Adoption rate, not tool quality, was the primary driver of
 outcome. This finding holds for LLM tooling broadly: a tool used by 20% of the
 team at low intensity delivers a fraction of the value of one used by 80% at high
 intensity.
 
-The McKinsey analysis [McKinsey, 2023] adds useful sector-level framing: software
-engineering is one of the highest-leverage domains for generative AI, with
+The [McKinsey analysis](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai) adds useful sector-level framing: software engineering is one of the highest-leverage domains for generative AI, with
 estimated productivity gains of 20–45% on coding tasks. But their analysis also
 flags that gains are not uniformly distributed — they skew toward certain task
 types (boilerplate, test generation, documentation) and away from others (complex
@@ -54,8 +51,7 @@ architectural reasoning, cross-system debugging). This shapes what you ask the
 team to use AI for in the first 90 days.
 
 The change management research is less AI-specific but directly applicable.
-Prosci's ADKAR model [Hiatt, 2006] — Awareness, Desire, Knowledge, Ability,
-Reinforcement — maps cleanly onto AI adoption patterns. The failure mode most
+[Prosci's ADKAR model](https://www.prosci.com/methodology/adkar) — Awareness, Desire, Knowledge, Ability, Reinforcement — maps cleanly onto AI adoption patterns. The failure mode most
 common in engineering teams is skipping from Awareness directly to Ability
 (training + enablement) without building Desire. Engineers who don't see why they
 should change their workflow will not change their workflow, regardless of how
@@ -276,42 +272,6 @@ typically goes deeper.
 **Both models** will produce better compliance guidance if you name your specific
 regulatory framework (HIPAA, SOC 2, GDPR, FedRAMP) rather than describing it
 generically.
-
----
-
-## Sources
-
-[research] Kalliamvakou, E., "Research: quantifying GitHub Copilot's impact on
-developer productivity and happiness," GitHub Blog, 2022.
-https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/
-The most rigorous published study on coding assistant productivity impact.
-55% faster task completion; adoption rate as the primary variance driver.
-
-[research] McKinsey Global Institute, "The economic potential of generative AI:
-The next productivity frontier," June 2023.
-https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai
-Sector-level productivity estimates with software engineering as a high-leverage
-domain. Useful for framing the opportunity to leadership without overpromising.
-
-[practitioner] Forsgren, N., Humble, J., & Kim, G., *Accelerate: The Science of
-Lean Software and DevOps*, IT Revolution, 2018.
-Establishes the DORA metrics framework (deployment frequency, lead time, change
-failure rate, MTTR) which provides the best pre-existing baseline measurement
-system for AI adoption impact. Directly informs the measurement framework section.
-
-[practitioner] Hiatt, J., *ADKAR: A Model for Change in Business, Government and
-our Community*, Prosci Learning Center, 2006.
-The ADKAR model (Awareness, Desire, Knowledge, Ability, Reinforcement) is the
-most widely validated change management framework and maps cleanly onto AI
-adoption patterns in engineering teams. The champion strategy in this skill is
-directly derived from the Desire phase of ADKAR.
-
-[field] Anonymous, Director of Engineering, Series B SaaS company, 100 engineers,
-2024. Rolled out GitHub Copilot across 8 teams over 90 days. Adoption at day 30
-was 18% (seat-based). After shifting from mandate to champion model at day 45,
-adoption reached 71% at day 90. Primary insight: the two engineers who were most
-vocal skeptics in week 1 became the most effective champions by week 6 after
-being given early access and genuine autonomy to evaluate.
 
 ---
 

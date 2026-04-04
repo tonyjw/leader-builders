@@ -32,7 +32,7 @@ changelog:
 
 ## The reasoning
 
-Managers typically arrive at low-performer conversations having waited too long, with too much accumulated evidence, and without a clear picture of what "meeting expectations" actually means [Scott, 2017]. The conversation then fails not because of poor delivery, but because the standard was never made explicit — the person genuinely didn't know where the bar was. Grote's framework for formal performance management emphasizes that clarity about the performance standard is more predictive of outcome than the tone or structure of the conversation itself [Grote, 2006]. This prompt forces that clarity before the meeting: what does success look like, what is the gap, and what happens next if nothing changes.
+Managers typically arrive at low-performer conversations having waited too long, with too much accumulated evidence, and without a clear picture of what "meeting expectations" actually means — [the failure mode Kim Scott calls ruinous empathy](https://review.firstround.com/radical-candor-the-surprising-secret-to-being-a-good-boss/). The conversation then fails not because of poor delivery, but because the standard was never made explicit — the person genuinely didn't know where the bar was. [Grote's framework for formal performance management](https://hbr.org/2000/01/performance-appraisal-reappraised) emphasizes that clarity about the performance standard is more predictive of outcome than the tone or structure of the conversation itself. This prompt forces that clarity before the meeting: what does success look like, what is the gap, and what happens next if nothing changes.
 
 ---
 
@@ -159,18 +159,6 @@ Mixing coaching language ("let's work on this together") with formal process lan
 
 **Skipping documentation**
 In a formal process, undocumented conversations effectively didn't happen. The model will produce documentation guidance if you specify the formal stage. Do not skip this step — it protects both the manager and the report.
-
----
-
-## Sources
-
-[practitioner] Scott, K., *Radical Candor: Be a Kick-Ass Boss Without Losing Your Humanity*, St. Martin's Press, 2017.
-The framework for distinguishing ruinous empathy (not being direct enough) from obnoxious aggression. Directly informs the opening statement structure — direct, not punishing.
-
-[practitioner] Grote, R.C., *Discipline Without Punishment: The Proven Strategy That Turns Problem Employees into Superior Performers*, AMACOM, 2006.
-The most practical framework for formal performance management processes. Key insight: clarity about the standard matters more than delivery mechanics. The documentation guidance in this skill draws directly from Grote's process structure.
-
-[field] Anonymous, Director of Engineering, enterprise software company, 2023. Ran 4 formal performance conversations in one year. In two cases where the standard had been explicitly stated and documented before the formal conversation, both resolved (one improvement, one mutual exit with clarity). In two cases where the standard was implied rather than stated, both resulted in extended ambiguity and eventual legal review. Primary insight: the conversation is not the hard part — the preparation before it is.
 
 ---
 

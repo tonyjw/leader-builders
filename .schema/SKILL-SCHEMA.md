@@ -98,15 +98,15 @@ Structure:
 Tone: A knowledgeable colleague explaining their thinking, not an academic paper.
 Write for someone who will read this once and then use the skill.
 
-Inline citation format: `[Author, Year]` inline, linked to full reference in
-the `## Sources` section.
+Link format: embed links inline in the prose where the concept is introduced.
+Do not use `[Author, Year]` citation markers — link the natural phrase instead.
 
 Example:
 > Feedback conversations fail most often not because the content is wrong, but
-> because the framing activates defensiveness before the message lands. Research
-> on feedback interventions [Kluger & DeNisi, 1996] found that over a third of
-> feedback interventions actually decreased performance — and the primary predictor
-> was whether feedback threatened the recipient's sense of self.
+> because the framing activates defensiveness before the message lands.
+> [Kluger and DeNisi's 1996 meta-analysis](https://psycnet.apa.org/record/1996-02773-003)
+> found that over a third of feedback interventions actually decreased performance —
+> and the primary predictor was whether feedback threatened the recipient's sense of self.
 
 ---
 
@@ -174,29 +174,7 @@ Only include if there are meaningful differences across models or versions.
 
 ---
 
-### 8. `## Sources` [required]
-
-Full reference list for everything cited in `## The reasoning`.
-
-Three source types, each with a different label:
-
-```
-[research]   Author(s), "Title," Publication/Journal, Year. URL or DOI if available.
-             One sentence on why this source is relevant.
-
-[practitioner] Author, Title (Book/Essay/Post), Year. URL if available.
-               One sentence on why this source is relevant.
-
-[field]      Anonymous or attributed. Context: org type, team size, industry.
-             What was observed or measured. Date range if known.
-```
-
-Minimum: 2 sources per skill.
-At least one must be [research] or [practitioner] — field evidence alone is not sufficient.
-
----
-
-### 9. `## Changelog` [required]
+### 8. `## Changelog` [required]
 
 Human-readable version of the front-matter changelog.
 Narrative format — not just "fixed typo."
@@ -220,7 +198,6 @@ Each entry explains:
 | `## Variables` | Interactive variable table with inline editing (phase 2) |
 | `## What good output looks like` | Collapsible example panel |
 | `## Failure modes` | Warning-styled callout list |
-| `## Sources` | Formatted bibliography at page bottom |
 | `changelog` | Expandable version history timeline |
 | `not-for` | Yellow warning callout below the lede |
 | `tags` | Filterable tag pills on card and page |

@@ -31,7 +31,7 @@ changelog:
 
 ## The reasoning
 
-The most common mistake in AI ROI presentations to leadership is overclaiming: citing headline productivity figures (the 55% task-completion-speed improvement from Copilot research [Kalliamvakou, 2022]) without acknowledging that those numbers come from controlled studies on specific task types, not whole-team productivity. McKinsey's sector analysis [McKinsey, 2023] projects 20–45% productivity gains in software engineering but explicitly notes that gains are unevenly distributed across task types. Presenting these numbers without that context creates a credibility gap when early results don't match expectations. This prompt builds an ROI frame that is specific to your actual context, honest about the uncertainty, and structured around the business outcomes leadership actually cares about — not engineering metrics.
+The most common mistake in AI ROI presentations to leadership is overclaiming: citing headline productivity figures (the [55% task-completion-speed improvement from GitHub's Copilot research](https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/)) without acknowledging that those numbers come from controlled studies on specific task types, not whole-team productivity. [McKinsey's sector analysis](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai) projects 20–45% productivity gains in software engineering but explicitly notes that gains are unevenly distributed across task types. Presenting these numbers without that context creates a credibility gap when early results don't match expectations. This prompt builds an ROI frame that is specific to your actual context, honest about the uncertainty, and structured around the business outcomes leadership actually cares about — not engineering metrics.
 
 ---
 
@@ -150,18 +150,6 @@ Leadership will ask "what if this doesn't work?" If you haven't prepared an hone
 
 **No measurable threshold for success**
 "We'll track adoption" is not a success criterion. Specify what number, measured how, by when — and what decision you'll make if you don't hit it. This signals that you're managing an investment, not running an experiment with no accountability.
-
----
-
-## Sources
-
-[research] Kalliamvakou, E., "Research: quantifying GitHub Copilot's impact on developer productivity and happiness," GitHub Blog, 2022.
-https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/
-The most rigorous published study on coding assistant productivity. Key finding: 55% faster task completion in a controlled study. Adoption rate, not tool quality, was the primary variance driver — directly informs the adoption-risk caveat in this skill.
-
-[research] McKinsey Global Institute, "The economic potential of generative AI: The next productivity frontier," June 2023.
-https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai
-Sector-level productivity estimates with software engineering as a high-leverage domain (20–45% productivity gain estimates). The report explicitly notes that gains are unevenly distributed across task types — the key caveat that most presentations omit.
 
 ---
 

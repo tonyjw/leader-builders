@@ -44,28 +44,11 @@ happen before the conversation starts. Managers prepare *what* to say but not
 that becomes a confrontation, or a confrontation that gets so softened it doesn't
 land at all.
 
-The foundational research here is Kluger and DeNisi's 1996 meta-analysis of 131
-feedback intervention studies [Kluger & DeNisi, 1996]. Their finding, which holds
-up across decades of replication: more than a third of feedback interventions
-actually *decrease* performance. The primary predictor of failure was whether the
-feedback directed attention to the self (identity threat) rather than to the task
-or behavior. This is why the structure of the opening matters so much — the first
-sentence sets whether the brain goes into defend mode or problem-solving mode.
+The foundational research here is [Kluger and DeNisi's 1996 meta-analysis](https://psycnet.apa.org/record/1996-02773-003) of 131 feedback intervention studies. Their finding, which holds up across decades of replication: more than a third of feedback interventions actually *decrease* performance. The primary predictor of failure was whether the feedback directed attention to the self (identity threat) rather than to the task or behavior. This is why the structure of the opening matters so much — the first sentence sets whether the brain goes into defend mode or problem-solving mode.
 
-Stone and Heen's framework [Stone & Heen, 2014] adds a second layer: people
-receive feedback through three distinct triggers — truth triggers (is this
-accurate?), relationship triggers (do I trust this person?), and identity triggers
-(does this threaten who I am?). Effective feedback preparation anticipates all
-three. The reason this prompt asks you to prepare for specific deflections isn't
-pessimism — it's that the deflections are predictable, and meeting them with
-curiosity rather than counter-argument is a trainable skill.
+[Stone and Heen's framework](https://hbr.org/2014/01/find-the-coaching-in-criticism) adds a second layer: people receive feedback through three distinct triggers — truth triggers (is this accurate?), relationship triggers (do I trust this person?), and identity triggers (does this threaten who I am?). Effective feedback preparation anticipates all three. The reason this prompt asks you to prepare for specific deflections isn't pessimism — it's that the deflections are predictable, and meeting them with curiosity rather than counter-argument is a trainable skill.
 
-Lara Hogan's work on management [Hogan, 2019] adds a practical point that's easy
-to overlook: most managers wait too long, then over-compensate with too much
-accumulated evidence at once. The prompt structure here deliberately limits you to
-two or three specific observations — not because more evidence isn't available,
-but because flooding a feedback conversation with examples activates defensiveness
-and makes the core message harder to hear.
+[Lara Hogan's writing on management](https://larahogan.me/management/) adds a practical point that's easy to overlook: most managers wait too long, then over-compensate with too much accumulated evidence at once. The prompt structure here deliberately limits you to two or three specific observations — not because more evidence isn't available, but because flooding a feedback conversation with examples activates defensiveness and makes the core message harder to hear.
 
 One honest caveat: this prompt prepares you for the conversation, it doesn't
 conduct it. The output gives you a structure and handles the most common responses.
@@ -236,28 +219,6 @@ sound like a real manager, not a conflict resolution training module."
 another manager to have this conversation, not having it directly myself. Frame
 the output accordingly." The model will shift from first-person preparation to
 coaching framing.
-
----
-
-## Sources
-
-[research] Kluger, A.N. & DeNisi, A., "The Effects of Feedback Interventions on
-Performance: A Historical Review, a Meta-Analysis, and a Preliminary Feedback
-Intervention Theory," *Psychological Bulletin*, Vol. 119, No. 2, 1996, pp. 254–284.
-The foundational study on feedback effectiveness. Key finding: 38% of feedback
-interventions decreased performance; self-threatening feedback was the primary
-failure mode.
-
-[practitioner] Stone, D. & Heen, S., *Thanks for the Feedback: The Science and
-Art of Receiving Feedback Well*, Viking, 2014.
-Introduces the three feedback triggers (truth, relationship, identity) and explains
-why receivers, not givers, ultimately control whether feedback lands. Directly
-informs the deflection-anticipation structure of this prompt.
-
-[practitioner] Hogan, L., *Resilient Management*, A Book Apart, 2019.
-Practical guidance on giving feedback across the manager-report relationship,
-including the importance of separating feedback from performance evaluations and
-keeping the message focused. Informs the observation-over-interpretation guidance.
 
 ---
 

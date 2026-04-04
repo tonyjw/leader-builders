@@ -30,7 +30,7 @@ changelog:
 
 ## The reasoning
 
-The most common failure in self-written promotion cases is describing activity rather than impact: what the person did rather than what changed because they did it [Reilly, 2022]. Promotion committees at calibration aren't evaluating effort — they're evaluating evidence that the person is already operating at the next level. Larson's framework for leveling distinguishes between demonstrating competence at your current level (which is expected, not promotable) and demonstrating scope, judgment, and leverage that exceed your current role [Larson, 2019]. This prompt structures the case around that distinction: not "what I did" but "what the org can now do because of how I operated."
+The most common failure in self-written promotion cases is [describing activity rather than impact](https://www.noidea.dog/glue): what the person did rather than what changed because they did it. Promotion committees at calibration aren't evaluating effort — they're evaluating evidence that the person is already operating at the next level. [Larson's framework for leveling](https://lethain.com/sharing-your-managers-context/) distinguishes between demonstrating competence at your current level (which is expected, not promotable) and demonstrating scope, judgment, and leverage that exceed your current role. This prompt structures the case around that distinction: not "what I did" but "what the org can now do because of how I operated."
 
 ---
 
@@ -155,18 +155,6 @@ In most engineering organizations, promotion happens to people who advocate for 
 
 **Not addressing the obvious objection**
 Every promotion case has a predictable weak point. If your case is "I did great work on one large project," the objection is "is this a pattern or a one-time thing?" Address it in the document rather than leaving it for the committee to raise unchallenged.
-
----
-
-## Sources
-
-[practitioner] Reilly, T., *The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change*, O'Reilly Media, 2022.
-The most practical guide to staff-level promotion in engineering. Directly informs the "scope and leverage" section and the distinction between demonstrating competence (current level) and demonstrating organizational leverage (promotion evidence).
-
-[practitioner] Larson, W., *An Elegant Puzzle: Systems of Engineering Management*, Stripe Press, 2019.
-Covers the leveling framework from the manager's perspective — what calibration committees are actually evaluating and how to make evidence legible to people who don't know your work directly. Informs the decision-maker framing variable and the "above-level evidence" structure.
-
-[field] Anonymous, Staff Engineer, Series D fintech, 2023. Was passed over for Staff promotion twice with strong performance reviews but no written case. On third cycle, worked with manager to build a written document using this structure. Promoted in the same cycle. Key insight: the committee members who didn't know them had no basis to advocate — the written case gave them the language to do so.
 
 ---
 

@@ -30,7 +30,7 @@ changelog:
 
 ## The reasoning
 
-Most engineering manager job descriptions fail to represent the actual job: they either list generic leadership platitudes ("drives results," "fosters collaboration") or over-index on technical requirements for a role that is primarily about people and systems [Hogan, 2019]. The result is a mismatch between the candidates attracted and what the role actually demands. Larson's framework for distinguishing engineering management scope emphasizes that the specific shape of an EM role — team size, technical involvement, cross-functional surface area — determines what a good candidate looks like more than any generic set of qualifications [Larson, 2019]. This prompt forces that specificity before the writing starts.
+Most engineering manager job descriptions fail to represent the actual job: they either list generic leadership platitudes ("drives results," "fosters collaboration") or over-index on technical requirements for a role that is [primarily about people and systems](https://larahogan.me/management/). The result is a mismatch between the candidates attracted and what the role actually demands. [Larson's framework for distinguishing engineering management scope](https://lethain.com/running-an-engineering-reorg/) emphasizes that the specific shape of an EM role — team size, technical involvement, cross-functional surface area — determines what a good candidate looks like more than any generic set of qualifications. This prompt forces that specificity before the writing starts.
 
 ---
 
@@ -163,18 +163,6 @@ JDs that present only the opportunity and not the difficulty attract candidates 
 
 **Generic must-haves**
 "Strong communication skills" and "passion for engineering" as requirements filter nothing. Must-haves should be things you would actually reject a candidate over in screening.
-
----
-
-## Sources
-
-[practitioner] Hogan, L., *Resilient Management*, A Book Apart, 2019.
-Practical framework for what engineering managers actually do — informs the verb-first responsibilities structure and the distinction between management outcomes (culture, retention) and management activities (1:1s, planning).
-
-[practitioner] Larson, W., *An Elegant Puzzle: Systems of Engineering Management*, Stripe Press, 2019.
-Framework for understanding EM scope variation by team size, technical involvement, and organizational context. Directly informs the `{{TEAM_DESCRIPTION}}` and `{{ROLE_SCOPE}}` variables — the shape of the role determines what a good candidate looks like.
-
-[field] Anonymous, Head of Engineering, Series C SaaS, 2023. Rewrote all EM JDs to include a "what's hard about this role" section after noticing that 3 of 4 EM hires in the prior year left within 18 months citing role-reality mismatch. After adding the section, early attrition dropped significantly and time-to-hire shortened (candidates self-selected more accurately).
 
 ---
 

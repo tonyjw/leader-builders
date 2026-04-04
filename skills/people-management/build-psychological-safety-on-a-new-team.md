@@ -31,7 +31,7 @@ changelog:
 
 ## The reasoning
 
-Edmondson's 1999 research across hospital nursing teams found that teams with higher psychological safety made more errors on record — not because they were worse teams, but because they reported more [Edmondson, 1999]. The counterintuitive result: safety and performance are positively correlated precisely because safe teams surface problems early rather than hiding them. Her follow-up work [Edmondson, 2018] identified the manager's behavior as the primary driver of team safety levels — not team composition, not org culture, and not tenure. The actions most predictive of safety were: publicly admitting uncertainty, inviting dissent specifically, and responding to bad news with curiosity rather than judgment. This prompt builds those behaviors into a concrete action plan rather than a set of principles to aspire to.
+[Edmondson's 1999 research](https://journals.sagepub.com/doi/10.2307/2666999) across hospital nursing teams found that teams with higher psychological safety made more errors on record — not because they were worse teams, but because they reported more. The counterintuitive result: safety and performance are positively correlated precisely because safe teams surface problems early rather than hiding them. Her [follow-up work on building fearless organizations](https://www.ted.com/talks/amy_edmondson_how_to_turn_a_group_of_strangers_into_a_team) identified the manager's behavior as the primary driver of team safety levels — not team composition, not org culture, and not tenure. The actions most predictive of safety were: publicly admitting uncertainty, inviting dissent specifically, and responding to bad news with curiosity rather than judgment. This prompt builds those behaviors into a concrete action plan rather than a set of principles to aspire to.
 
 ---
 
@@ -143,16 +143,6 @@ Teams with histories of low safety take months to shift, not weeks. If the previ
 
 **Misdiagnosing the root cause**
 Not all silence is psychological safety failure. If engineers are technically confident but not speaking up, check whether decisions are actually made in the meetings they're in — if the decision is already made before the meeting, silence is rational, not fearful.
-
----
-
-## Sources
-
-[research] Edmondson, A.C., "Psychological Safety and Learning Behavior in Work Teams," *Administrative Science Quarterly*, Vol. 44, No. 2, 1999, pp. 350–383.
-The foundational empirical study establishing psychological safety as a team-level construct. Key finding: manager behavior — specifically responses to errors and dissent — is the primary driver of team safety levels, not team composition.
-
-[practitioner] Edmondson, A.C., *The Fearless Organization: Creating Psychological Safety in the Workplace for Learning, Innovation, and Growth*, Wiley, 2018.
-Translates the 1999 research into practitioner guidance with case studies across industries. The specific behaviors in this skill (admitting uncertainty, inviting dissent, curiosity over judgment) come directly from Edmondson's behavioral framework.
 
 ---
 

@@ -31,7 +31,7 @@ changelog:
 
 ## The reasoning
 
-Work-sample tests — assessments that resemble actual job tasks — are among the highest-validity predictors of job performance in the selection research literature [Schmidt & Hunter, 1998]. The problem is that most engineering take-homes are either too narrow (algorithmic puzzles that don't resemble real work) or too broad (open-ended projects that take 10+ hours and filter for free time, not skill). The widely documented practitioner fix is to scope the problem to 2–3 hours of realistic work, provide enough context to make the problem feel real, and build an evaluation rubric before the assessment is sent — not after seeing submissions. This prompt builds all three elements.
+Work-sample tests — assessments that resemble actual job tasks — are among the [highest-validity predictors of job performance](https://psycnet.apa.org/record/1998-10661-006) in the selection research literature. The problem is that most engineering take-homes are either too narrow (algorithmic puzzles that don't resemble real work) or too broad (open-ended projects that take 10+ hours and filter for free time, not skill). The widely documented practitioner fix is to scope the problem to 2–3 hours of realistic work, provide enough context to make the problem feel real, and build an evaluation rubric before the assessment is sent — not after seeing submissions. This prompt builds all three elements.
 
 ---
 
@@ -162,17 +162,6 @@ Clean code in a 2-hour time-boxed assessment often predicts that the candidate h
 
 **No follow-up conversation**
 The take-home is the setup for a conversation, not a pass/fail gate on its own. Candidates who score well on the assessment but can't explain their own decisions in a follow-up are a warning sign. Build a structured review conversation into the process.
-
----
-
-## Sources
-
-[research] Schmidt, F.L. & Hunter, J.E., "The Validity and Utility of Selection Methods in Personnel Psychology: Practical and Theoretical Implications of 85 Years of Research Findings," *Psychological Bulletin*, Vol. 124, No. 2, 1998, pp. 262–274.
-The landmark meta-analysis of selection method validity. Work-sample tests rank among the highest-validity predictors of job performance, validating the take-home format when designed to resemble real work. General cognitive ability tests (algorithmic puzzles) have high validity in isolation but lower incremental validity when combined with work samples.
-
-[practitioner] Widely documented in engineering hiring practitioner literature, including posts from hiring managers at Stripe, GitHub, and similar engineering-led organizations. Common practitioner findings: time-boxing to 2–3 hours, piloting internally, and building rubrics pre-submission are the three practices most correlated with consistent, defensible hiring decisions.
-
-[field] Anonymous, VP Engineering, B2B SaaS, 2024. Redesigned take-home assessment after noticing that high-scoring candidates frequently underperformed in their first 90 days. Root cause: assessment was testing greenfield implementation; role required working in an existing codebase. After switching to a "fork and extend" format (candidates work with provided starter code), pass rate at 90-day review improved from 60% to 85%.
 
 ---
 

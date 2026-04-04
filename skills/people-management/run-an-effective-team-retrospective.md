@@ -30,7 +30,7 @@ changelog:
 
 ## The reasoning
 
-Most retrospectives fail at the action item stage: a meeting produces a list, the list disappears, and the next retrospective opens with the same complaints [Derby & Larsen, 2006]. The fix is structural — cap action items at two per retrospective, each with a named owner and a check-in date [Kerth, 2001]. The opening activity also matters disproportionately: teams that don't psychologically separate from the work they just finished spend the first 20 minutes relitigating it rather than reflecting on it. This prompt builds those three elements in sequence — an honest opening, a prioritization gate, and accountable closings.
+[Most retrospectives fail at the action item stage](https://estherderby.com/improving-retrospectives/): a meeting produces a list, the list disappears, and the next retrospective opens with the same complaints. The fix is structural — cap action items at two per retrospective, each with a named owner and a check-in date — a principle rooted in [Kerth's prime directive for retrospectives](https://retrospectivewiki.org/index.php?title=The_Prime_Directive). The opening activity also matters disproportionately: teams that don't psychologically separate from the work they just finished spend the first 20 minutes relitigating it rather than reflecting on it. This prompt builds those three elements in sequence — an honest opening, a prioritization gate, and accountable closings.
 
 ---
 
@@ -142,18 +142,6 @@ One engineer — often the most senior or most vocal — shapes the entire retro
 
 **Action items without owners**
 Items like "improve documentation" or "communicate better" appear on the action list and evaporate. Every item needs a single named owner. "The team" is not an owner. If the group can't agree on an owner, that's a signal the item isn't ready to be an action item yet.
-
----
-
-## Sources
-
-[practitioner] Derby, E. & Larsen, D., *Agile Retrospectives: Making Good Teams Great*, Pragmatic Bookshelf, 2006.
-The foundational how-to guide for sprint retrospectives. The what-worked / what-to-improve / action-items structure comes from this book, as does the emphasis on limiting action items to prevent completion failure.
-
-[practitioner] Kerth, N.L., *Project Retrospectives: A Handbook for Team Reviews*, Dorset House, 2001.
-The original retrospective handbook, primarily focused on project-end reviews. Introduced the prime directive and the principle that action item ownership — not team ownership — is what determines whether anything changes.
-
-[field] Anonymous, Engineering Manager, growth-stage SaaS, 40-person engineering org, 2024. Switched from open-format retrospectives to a capped 2-item format with named owners. After three cycles, completion rate on retrospective action items went from roughly 10% to over 70%. Primary finding: the dot-vote step removed the social pressure to act on every complaint raised.
 
 ---
 

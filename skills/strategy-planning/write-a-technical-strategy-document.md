@@ -30,7 +30,7 @@ changelog:
 
 ## The reasoning
 
-Technical strategy documents fail most often because they describe what will be built without explaining why the current state is insufficient or what tradeoffs are being accepted [Larson, 2019]. The result is a document that's aspirational but not actionable — engineers can't use it to make decisions because it doesn't tell them what to optimize for. Reilly's framework for staff-level technical work emphasizes that a useful strategy document must name the constraints explicitly, because constraints are what make the strategy real rather than theoretical [Reilly, 2022]. This prompt structures the document to lead with diagnosis rather than solution, which is the structural difference between a strategy and a roadmap.
+Technical strategy documents fail most often because they describe what will be built without explaining why the current state is insufficient or what tradeoffs are being accepted — [a gap Will Larson identifies in his writing on engineering strategy](https://lethain.com/engineering-strategy/). The result is a document that's aspirational but not actionable — engineers can't use it to make decisions because it doesn't tell them what to optimize for. [Reilly's framework for staff-level technical work](https://www.noidea.dog/glue) emphasizes that a useful strategy document must name the constraints explicitly, because constraints are what make the strategy real rather than theoretical. This prompt structures the document to lead with diagnosis rather than solution, which is the structural difference between a strategy and a roadmap.
 
 ---
 
@@ -154,16 +154,6 @@ Without a "what we're not doing" section, the document will be read as endorsing
 
 **Writing for the wrong audience**
 A strategy document written for the CTO and read by ICs produces misalignment. Fill in `{{AUDIENCE}}` specifically — the level of technical detail and the framing of tradeoffs change significantly.
-
----
-
-## Sources
-
-[practitioner] Larson, W., *An Elegant Puzzle: Systems of Engineering Management*, Stripe Press, 2019.
-The most practical guide to engineering strategy at scale. The "situation → complicating factors → proposed direction" structure in this skill is adapted from Larson's strategy document framework, with emphasis on leading with diagnosis.
-
-[practitioner] Reilly, T., *The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change*, O'Reilly Media, 2022.
-Covers the role of written technical strategy in staff-level work, including how to make tradeoffs legible and how to handle the "constraints first" structure. Directly informs the non-goals and constraints sections.
 
 ---
 

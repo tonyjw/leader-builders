@@ -30,7 +30,7 @@ changelog:
 
 ## The reasoning
 
-The original "technical debt" metaphor — coined by Cunningham to explain to business stakeholders why code sometimes needs to be refactored [Cunningham, 1992] — was useful precisely because it made an engineering concern legible to non-engineers. The problem is that the metaphor is now overloaded: teams use "tech debt" to describe everything from outdated dependencies to fundamental architectural decisions, making prioritization nearly impossible [Kruchten et al., 2012]. Kruchten's research proposes a more useful distinction: debt that actively slows down current work (high interest) versus debt that is dormant but represents future risk. This prompt builds that distinction into the prioritization framework so that the output is a ranked list with a business-legible rationale, not just an engineering wishlist.
+The [original "technical debt" metaphor](http://c2.com/doc/oopsla92.html) — coined by Cunningham to explain to business stakeholders why code sometimes needs to be refactored — was useful precisely because it made an engineering concern legible to non-engineers. The problem is that the metaphor is now overloaded: teams use "tech debt" to describe everything from outdated dependencies to fundamental architectural decisions, making prioritization nearly impossible. [Kruchten, Nord, and Ozkaya's taxonomy](https://ieeexplore.ieee.org/document/6336722/) proposes a more useful distinction: debt that actively slows down current work (high interest) versus debt that is dormant but represents future risk. This prompt builds that distinction into the prioritization framework so that the output is a ranked list with a business-legible rationale, not just an engineering wishlist.
 
 ---
 
@@ -144,16 +144,6 @@ Large allocation requests without specific high-interest debt items get rejected
 
 **Ignoring the "debt that can wait" list**
 Not all debt needs to be addressed. Including low-interest, low-risk items in the prioritization conversation undermines credibility. The model produces a "can wait" list specifically so you can pre-empt the "why can't this wait?" question for items that can't.
-
----
-
-## Sources
-
-[practitioner] Cunningham, W., "The WyCash Portfolio Management System," OOPSLA Experience Report, 1992. Available at c2.com.
-The original formulation of the technical debt metaphor — coined specifically as a communication tool for explaining refactoring to business stakeholders. The financial metaphor (interest, principal) comes from this paper and directly informs the interest-rate scoring in this skill.
-
-[research] Kruchten, P., Nord, R.L., & Ozkaya, I., "Technical Debt: From Metaphor to Theory and Practice," *IEEE Software*, Vol. 29, No. 6, 2012, pp. 18–21.
-Proposes a more rigorous taxonomy distinguishing intentional vs. unintentional debt and active vs. dormant debt. The two-dimensional scoring (interest rate × risk) in this skill is derived from this framework.
 
 ---
 

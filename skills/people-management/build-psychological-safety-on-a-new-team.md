@@ -32,8 +32,8 @@ time-to-run: 15 minutes
 ## The prompt
 
 ```
-I'm a {{YOUR_ROLE}} and I want to build genuine psychological safety on
-{{TEAM_DESCRIPTION}}.
+I'm a {{YOUR_ROLE}} and I want to build genuine
+psychological safety on {{TEAM_DESCRIPTION}}.
 
 **Current state:**
 {{CURRENT_STATE}}
@@ -46,19 +46,23 @@ I'm a {{YOUR_ROLE}} and I want to build genuine psychological safety on
 
 Please help me with:
 
-1. Three specific behaviors I should model in the next 30 days that research
-   shows drive safety — not platitudes, but observable actions with specific
+1. Three specific behaviors I should model in the next
+   30 days that research shows drive safety — not
+   platitudes, but observable actions with specific
    examples of what they look like in practice.
 
-2. Two meeting or team ritual changes I can make in the next two weeks that
-   create structural space for dissent and problem-raising — not just norms, but
+2. Two meeting or team ritual changes I can make in the
+   next two weeks that create structural space for
+   dissent and problem-raising — not just norms, but
    mechanisms.
 
-3. The most common way managers accidentally undermine safety while trying to
-   build it, given the context I've described — and what to do differently.
+3. The most common way managers accidentally undermine
+   safety while trying to build it, given the context
+   I've described — and what to do differently.
 
-4. A 60-day check: what specific observable signals would tell me whether safety
-   is improving, and what would tell me it isn't?
+4. A 60-day check: what specific observable signals
+   would tell me whether safety is improving, and what
+   would tell me it isn't?
 ```
 
 ---

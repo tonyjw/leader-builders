@@ -31,7 +31,8 @@ Technical strategy documents fail most often because they describe what will be 
 ## The prompt
 
 ```
-Help me write a technical strategy document for {{ORGANIZATION_CONTEXT}}.
+Help me write a technical strategy document for
+{{ORGANIZATION_CONTEXT}}.
 
 **Problem I'm solving:**
 {{PROBLEM_SCOPE}}
@@ -48,31 +49,42 @@ Help me write a technical strategy document for {{ORGANIZATION_CONTEXT}}.
 **Primary audience:**
 {{AUDIENCE}}
 
-Please produce a structured technical strategy document with these sections:
+Please produce a structured technical strategy document
+with these sections:
 
-1. **Situation** (2–3 paragraphs): What is the current state and why is it insufficient?
-   Name the actual problem — not symptoms, but the underlying structural issue.
-   Be specific about what's breaking, what's slowing the team down, or what
-   opportunity is being missed.
+1. **Situation** (2–3 paragraphs): What is the current
+   state and why is it insufficient? Name the actual
+   problem — not symptoms, but the underlying structural
+   issue. Be specific about what's breaking, what's
+   slowing the team down, or what opportunity is being
+   missed.
 
-2. **Complicating factors** (bullet list): What makes this hard? What constraints or
-   tensions exist that a simple solution would ignore?
+2. **Complicating factors** (bullet list): What makes
+   this hard? What constraints or tensions exist that a
+   simple solution would ignore?
 
-3. **Proposed direction** (3–4 paragraphs): The approach we're taking and why. This
-   should explain the logic, not just describe the plan. For each key choice, name
-   the alternatives considered and why this direction wins given our constraints.
+3. **Proposed direction** (3–4 paragraphs): The approach
+   we're taking and why. This should explain the logic,
+   not just describe the plan. For each key choice, name
+   the alternatives considered and why this direction
+   wins given our constraints.
 
-4. **What we're not doing** (bullet list): Explicit non-goals. What reasonable
-   approaches are we ruling out, and why?
+4. **What we're not doing** (bullet list): Explicit
+   non-goals. What reasonable approaches are we ruling
+   out, and why?
 
-5. **Success criteria** (3–5 items): How do we know this strategy is working 6 months
-   in? Be specific — not "improved reliability" but "P99 latency under X ms for Y."
+5. **Success criteria** (3–5 items): How do we know this
+   strategy is working 6 months in? Be specific — not
+   "improved reliability" but "P99 latency under X ms
+   for Y."
 
-6. **Key risks and mitigations**: The 3 most likely ways this strategy fails and
-   what we're doing to reduce each.
+6. **Key risks and mitigations**: The 3 most likely ways
+   this strategy fails and what we're doing to reduce
+   each.
 
-7. **Open questions**: What do we still need to figure out? This section makes the
-   document honest about its own limits.
+7. **Open questions**: What do we still need to figure
+   out? This section makes the document honest about its
+   own limits.
 ```
 
 ---

@@ -31,8 +31,9 @@ The [original "technical debt" metaphor](http://c2.com/doc/oopsla92.html) — co
 ## The prompt
 
 ```
-I'm a {{YOUR_ROLE}} and I need to prioritize technical debt work against product
-feature work for {{TEAM_CONTEXT}}.
+I'm a {{YOUR_ROLE}} and I need to prioritize technical
+debt work against product feature work for
+{{TEAM_CONTEXT}}.
 
 **Current debt inventory (name the specific items):**
 {{DEBT_ITEMS}}
@@ -48,23 +49,31 @@ feature work for {{TEAM_CONTEXT}}.
 
 Please help me produce:
 
-1. A prioritization framework that scores each debt item on two dimensions:
-   - Interest rate: how much is this debt actively slowing us down today?
-   - Risk: what's the probability and severity of a future failure if we ignore it?
-   Apply this framework to the specific items I've listed.
+1. A prioritization framework that scores each debt item
+   on two dimensions:
+   - Interest rate: how much is this debt actively
+     slowing us down today?
+   - Risk: what's the probability and severity of a
+     future failure if we ignore it?
+   Apply this framework to the specific items I've
+   listed.
 
-2. A recommended allocation for the next quarter: what percentage of capacity
-   should go to debt vs. features, and why — with a business rationale, not
-   just an engineering one.
+2. A recommended allocation for the next quarter: what
+   percentage of capacity should go to debt vs. features,
+   and why — with a business rationale, not just an
+   engineering one.
 
-3. A "debt that can wait" list: which items from my list can be reasonably
-   deferred without material cost, and what would change that calculus?
+3. A "debt that can wait" list: which items from my list
+   can be reasonably deferred without material cost, and
+   what would change that calculus?
 
-4. Two ways to frame this tradeoff to a product manager or executive who is
-   skeptical of engineering time spent on "cleanup work."
+4. Two ways to frame this tradeoff to a product manager
+   or executive who is skeptical of engineering time
+   spent on "cleanup work."
 
-5. The single highest-priority debt item from my list and a one-paragraph case
-   for why it should be addressed now rather than deferred.
+5. The single highest-priority debt item from my list
+   and a one-paragraph case for why it should be
+   addressed now rather than deferred.
 ```
 
 ---

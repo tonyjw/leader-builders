@@ -47,22 +47,27 @@ You are helping me facilitate a team retrospective.
 
 Please produce:
 
-1. An opening activity (5 minutes) that gets people honest and present — not a
-   generic icebreaker. Something that names the mood without requiring anyone
-   to perform positivity.
+1. An opening activity (5 minutes) that gets people
+   honest and present — not a generic icebreaker.
+   Something that names the mood without requiring
+   anyone to perform positivity.
 
-2. A structured agenda for the remaining time, with specific prompts for each
-   section and what to do if the conversation stalls or circles back.
+2. A structured agenda for the remaining time, with
+   specific prompts for each section and what to do if
+   the conversation stalls or circles back.
 
-3. A prioritization framework for action items — the retrospective should end
-   with no more than 2 action items. Show me how to get from a long list to 2
+3. A prioritization framework for action items — the
+   retrospective should end with no more than 2 action
+   items. Show me how to get from a long list to 2
    items that will actually get done.
 
-4. An action item format that creates real accountability: owner, definition of
-   done, and a check-in date — not a vague improvement.
+4. An action item format that creates real
+   accountability: owner, definition of done, and a
+   check-in date — not a vague improvement.
 
-5. Two specific facilitation moves: one for when the conversation is dominated
-   by one or two voices, and one for when the team is conflict-avoidant and
+5. Two specific facilitation moves: one for when the
+   conversation is dominated by one or two voices, and
+   one for when the team is conflict-avoidant and
    everything stays surface-level.
 ```
 

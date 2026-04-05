@@ -56,23 +56,29 @@ Help me write a compelling promotion case for myself.
 
 Please produce:
 
-1. An opening paragraph (3–5 sentences) that frames my case in terms of
-   organizational impact — not tenure, not effort, not "I've been doing senior
-   work" — but what the org can do now that it couldn't before.
+1. An opening paragraph (3–5 sentences) that frames my
+   case in terms of organizational impact — not tenure,
+   not effort, not "I've been doing senior work" — but
+   what the org can do now that it couldn't before.
 
-2. For each of my top 3 impact examples: a structured entry with the situation,
-   what I specifically did (not the team), the measurable outcome, and why it
-   demonstrates the target-level criteria. Make the evidence concrete.
+2. For each of my top 3 impact examples: a structured
+   entry with the situation, what I specifically did
+   (not the team), the measurable outcome, and why it
+   demonstrates the target-level criteria. Make the
+   evidence concrete.
 
-3. A "scope and leverage" section: how my influence has extended beyond my
-   immediate work — other teams, newer engineers, organizational decisions I've
+3. A "scope and leverage" section: how my influence has
+   extended beyond my immediate work — other teams,
+   newer engineers, organizational decisions I've
    shaped.
 
-4. The most likely objection the committee will raise and how to preempt it —
-   either in the document itself or in how my manager should frame it.
+4. The most likely objection the committee will raise
+   and how to preempt it — either in the document
+   itself or in how my manager should frame it.
 
-5. A closing paragraph that states the ask directly and names what I commit to
-   in the next 6 months in the new role.
+5. A closing paragraph that states the ask directly and
+   names what I commit to in the next 6 months in the
+   new role.
 ```
 
 ---

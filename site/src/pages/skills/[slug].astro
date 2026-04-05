@@ -52,10 +52,7 @@ const promptChipsHtml = renderPromptWithChips(sections.promptCode, nameToCardId)
       </div>
 
       <h1>{fm.title}</h1>
-
-      <div class="badge-row">
-        <span class="badge badge-difficulty">{fm.difficulty}</span>
-      </div>
+      <span class="skill-level">{fm.difficulty}</span>
     </div>
 
     <!-- FULL-WIDTH CONTEXT BAND -->
@@ -68,9 +65,7 @@ const promptChipsHtml = renderPromptWithChips(sections.promptCode, nameToCardId)
       {fm['not-for'] && (
         <section>
           <div class="section-label">When not to use</div>
-          <div class="not-for-box">
-            <div>{fm['not-for']}</div>
-          </div>
+          <p class="not-for-text">{fm['not-for']}</p>
         </section>
       )}
 
@@ -133,11 +128,11 @@ const promptChipsHtml = renderPromptWithChips(sections.promptCode, nameToCardId)
       const text = btn.dataset.prompt ?? '';
       try {
         await navigator.clipboard.writeText(text);
-        btn.textContent = 'Copied!';
-        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+        btn.textContent = 'Copied';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
       } catch {
         btn.textContent = 'Copy failed';
-        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+        setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
       }
     });
   }
@@ -148,7 +143,7 @@ const promptChipsHtml = renderPromptWithChips(sections.promptCode, nameToCardId)
     if (!annotationsEl) return;
 
     // On mobile (single column), let cards flow naturally
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 640) {
       annotationsEl.style.height = '';
       document.querySelectorAll<HTMLElement>('.var-card').forEach(card => {
         card.style.position = 'static';
@@ -170,7 +165,6 @@ const promptChipsHtml = renderPromptWithChips(sections.promptCode, nameToCardId)
       const card = document.getElementById(cardId) as HTMLElement | null;
       if (!card) return;
 
-      // Ensure absolute positioning is set before measuring
       card.style.position = 'absolute';
 
       const chipRect = chip.getBoundingClientRect();

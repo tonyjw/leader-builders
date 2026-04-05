@@ -55,23 +55,30 @@ Help me frame the business case for an AI tooling investment to
 
 Please produce:
 
-1. An executive summary (4–6 sentences) that leads with the business outcome,
-   not the technology. What problem does this solve? What is the expected
-   return? What is the cost of not doing it?
+1. An executive summary (4–6 sentences) that leads with
+   the business outcome, not the technology. What
+   problem does this solve? What is the expected return?
+   What is the cost of not doing it?
 
-2. A translation of the productivity gains into business terms — not "55% faster
-   task completion" but what that means for our specific output, cost structure,
-   or time-to-market given the baseline metrics I've provided.
+2. A translation of the productivity gains into business
+   terms — not "55% faster task completion" but what
+   that means for our specific output, cost structure,
+   or time-to-market given the baseline metrics I've
+   provided.
 
-3. The 3 most important risks and caveats to name upfront — presented as
-   responsible stewardship, not hedging. Include what we're doing to mitigate each.
+3. The 3 most important risks and caveats to name
+   upfront — presented as responsible stewardship, not
+   hedging. Include what we're doing to mitigate each.
 
-4. A comparison to how the organization has evaluated similar investments —
-   what's the right analogy from their existing mental model?
+4. A comparison to how the organization has evaluated
+   similar investments — what's the right analogy from
+   their existing mental model?
 
-5. A "what we'll measure" section: 2 leading indicators visible within 60 days
-   and 1 lagging indicator at 6 months. Be specific — not "track adoption" but
-   exactly what metric, how measured, and what threshold indicates success.
+5. A "what we'll measure" section: 2 leading indicators
+   visible within 60 days and 1 lagging indicator at 6
+   months. Be specific — not "track adoption" but
+   exactly what metric, how measured, and what threshold
+   indicates success.
 ```
 
 ---

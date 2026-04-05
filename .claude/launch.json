@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "leader-builders",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "cd /Users/tony/Projects/leader-builders/site && PATH=/Users/tony/.nvm/versions/node/v22.13.1/bin:$PATH npx astro preview --port 4321"],
+      "port": 4321
+    }
+  ]
+}

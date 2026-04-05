@@ -58,9 +58,10 @@ than mandates.
 ## The prompt
 
 ```
-I'm leading an AI tooling rollout for my engineering organization. Help me build
-a structured 90-day adoption plan that treats change management as seriously as
-technical enablement.
+I'm leading an AI tooling rollout for my engineering
+organization. Help me build a structured 90-day
+adoption plan that treats change management as
+seriously as technical enablement.
 
 **My context:**
 - My role: {{YOUR_ROLE}}
@@ -82,22 +83,27 @@ technical enablement.
 
 Please produce:
 
-1. A phased 90-day rollout plan with specific activities per phase (weeks 1–4,
-   5–8, 9–12). For each phase, name the primary objective, 3–4 key activities,
-   and what "done" looks like.
+1. A phased 90-day rollout plan with specific activities
+   per phase (weeks 1–4, 5–8, 9–12). For each phase,
+   name the primary objective, 3–4 key activities, and
+   what "done" looks like.
 
-2. A champion identification and activation guide — who to look for, how to
-   equip them, and how to use them to pull adoption without mandates.
+2. A champion identification and activation guide — who
+   to look for, how to equip them, and how to use them
+   to pull adoption without mandates.
 
-3. The 3 most common failure modes in engineering AI adoption and specific
-   mitigation for each given my context.
+3. The 3 most common failure modes in engineering AI
+   adoption and specific mitigation for each given my
+   context.
 
-4. A measurement framework with 3 leading indicators (visible within 30 days)
-   and 2 lagging indicators (visible at 90 days). Be specific — not "track
+4. A measurement framework with 3 leading indicators
+   (visible within 30 days) and 2 lagging indicators
+   (visible at 90 days). Be specific — not "track
    adoption" but "track X using Y method."
 
-5. Communication templates for two audiences: what to say to engineers (honest,
-   not hype), and what to say to leadership (outcomes-focused).
+5. Communication templates for two audiences: what to
+   say to engineers (honest, not hype), and what to say
+   to leadership (outcomes-focused).
 ```
 
 ---

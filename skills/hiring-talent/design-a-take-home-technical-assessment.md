@@ -32,8 +32,9 @@ Work-sample tests — assessments that resemble actual job tasks — are among t
 ## The prompt
 
 ```
-Help me design a take-home technical assessment for {{ROLE_LEVEL}} candidates
-applying to work on {{TEAM_CONTEXT}}.
+Help me design a take-home technical assessment for
+{{ROLE_LEVEL}} candidates applying to work on
+{{TEAM_CONTEXT}}.
 
 **What this role actually does day-to-day:**
 {{REAL_WORK_DESCRIPTION}}
@@ -52,22 +53,28 @@ applying to work on {{TEAM_CONTEXT}}.
 
 Please produce:
 
-1. A take-home problem statement written as it would appear to the candidate —
-   clear setup, specific deliverable, and explicit time guidance. The problem
-   should resemble real work the role involves, not a generic coding puzzle.
+1. A take-home problem statement written as it would
+   appear to the candidate — clear setup, specific
+   deliverable, and explicit time guidance. The problem
+   should resemble real work the role involves, not a
+   generic coding puzzle.
 
-2. A rubric for evaluating submissions — scored dimensions, not a checklist.
-   Each dimension should have a description of what strong/acceptable/weak
+2. A rubric for evaluating submissions — scored
+   dimensions, not a checklist. Each dimension should
+   have a description of what strong/acceptable/weak
    looks like for that dimension specifically.
 
-3. The 2–3 things that most commonly signal a strong hire (beyond just "code
-   quality") given the specific role context I've provided.
+3. The 2–3 things that most commonly signal a strong
+   hire (beyond just "code quality") given the specific
+   role context I've provided.
 
-4. Red flags: what specific patterns in submissions should trigger a "no" — and
-   which patterns are noise (common mistakes that don't predict job performance)?
+4. Red flags: what specific patterns in submissions
+   should trigger a "no" — and which patterns are noise
+   (common mistakes that don't predict job performance)?
 
-5. A brief candidate-facing FAQ to include with the problem: what format to
-   submit in, whether to use libraries, how to handle ambiguity, what "done"
+5. A brief candidate-facing FAQ to include with the
+   problem: what format to submit in, whether to use
+   libraries, how to handle ambiguity, what "done"
    means.
 ```
 

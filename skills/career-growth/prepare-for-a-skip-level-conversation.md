@@ -32,7 +32,8 @@ Skip-level conversations are high-stakes for a simple reason: they're sparse, so
 ## The prompt
 
 ```
-Help me prepare for a skip-level conversation with {{SKIP_LEVEL_ROLE}}.
+Help me prepare for a skip-level conversation with
+{{SKIP_LEVEL_ROLE}}.
 
 **My role and context:**
 {{YOUR_CONTEXT}}
@@ -51,22 +52,26 @@ Help me prepare for a skip-level conversation with {{SKIP_LEVEL_ROLE}}.
 
 Please help me with:
 
-1. Three talking points about my team's work that connect directly to what
-   this leader cares about — not a status update, but a framing that positions
+1. Three talking points about my team's work that
+   connect directly to what this leader cares about —
+   not a status update, but a framing that positions
    our work in terms of organizational impact.
 
-2. The one thing I most want them to remember after this conversation —
-   and how to land it without it feeling like self-promotion.
+2. The one thing I most want them to remember after
+   this conversation — and how to land it without it
+   feeling like self-promotion.
 
-3. Two smart questions to ask that demonstrate strategic thinking and leave
-   a positive impression, given what I know about their priorities.
+3. Two smart questions to ask that demonstrate strategic
+   thinking and leave a positive impression, given what
+   I know about their priorities.
 
-4. One risk or challenge I should proactively raise — the kind of thing that
-   builds credibility when raised early, rather than surfacing as a surprise
-   later.
+4. One risk or challenge I should proactively raise —
+   the kind of thing that builds credibility when raised
+   early, rather than surfacing as a surprise later.
 
-5. What to avoid: topics, framings, or moves that are likely to land poorly
-   given this person's context and communication style.
+5. What to avoid: topics, framings, or moves that are
+   likely to land poorly given this person's context
+   and communication style.
 ```
 
 ---

@@ -33,13 +33,15 @@ Managers typically arrive at low-performer conversations having waited too long,
 ## The prompt
 
 ```
-I'm a {{YOUR_ROLE}} and I need to have a direct performance conversation with
-{{REPORT_ROLE}} about sustained underperformance. Help me prepare.
+I'm a {{YOUR_ROLE}} and I need to have a direct
+performance conversation with {{REPORT_ROLE}} about
+sustained underperformance. Help me prepare.
 
 **The performance gap:**
 {{PERFORMANCE_GAP}}
 
-**Specific examples (behaviors or measurable outcomes, not interpretations):**
+**Specific examples (behaviors or measurable outcomes,
+not interpretations):**
 - {{EXAMPLE_1}}
 - {{EXAMPLE_2}}
 - {{EXAMPLE_3_OPTIONAL}}
@@ -55,23 +57,29 @@ I'm a {{YOUR_ROLE}} and I need to have a direct performance conversation with
 
 Please help me with:
 
-1. An opening statement (3–5 sentences) that names the performance gap directly
-   and references the prior feedback — no softening, no sandwiching, but also
+1. An opening statement (3–5 sentences) that names the
+   performance gap directly and references the prior
+   feedback — no softening, no sandwiching, but also
    no accusatory framing.
 
-2. A clear statement of the standard: what does meeting expectations actually
-   look like for this role, and what is the specific gap between that and what
-   I've observed?
+2. A clear statement of the standard: what does meeting
+   expectations actually look like for this role, and
+   what is the specific gap between that and what I've
+   observed?
 
-3. The 2 most likely responses from this person (denial, deflection, minimizing,
-   or genuine surprise) and how to handle each one while keeping the conversation
-   on track.
+3. The 2 most likely responses from this person (denial,
+   deflection, minimizing, or genuine surprise) and how
+   to handle each one while keeping the conversation on
+   track.
 
-4. A closing that names next steps, timeline, and consequence — specific enough
-   that both of us know what success looks like and what happens if it doesn't.
+4. A closing that names next steps, timeline, and
+   consequence — specific enough that both of us know
+   what success looks like and what happens if it
+   doesn't.
 
-5. If this is a formal stage (PIP or warning): what I should document after this
-   conversation and what should have been documented before it.
+5. If this is a formal stage (PIP or warning): what I
+   should document after this conversation and what
+   should have been documented before it.
 ```
 
 ---

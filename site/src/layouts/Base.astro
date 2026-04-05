@@ -22,11 +22,13 @@ const pageTitle = title ? `${title} — leader.builders` : 'leader.builders';
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header class="site-header">
-      <div class="container">
+      <div class="site-header__inner">
         <a href="/" class="site-logo">leader.builders</a>
+        <a href="https://github.com/tonyjw/leader-builders" target="_blank" rel="noopener" class="site-nav-link">GitHub</a>
       </div>
     </header>
 
@@ -35,7 +37,7 @@ const pageTitle = title ? `${title} — leader.builders` : 'leader.builders';
     </main>
 
     <footer class="site-footer">
-      <div class="container">
+      <div class="site-footer__inner">
         <p>
           <a href="https://github.com/tonyjw/leader-builders" target="_blank" rel="noopener">GitHub</a>
           &middot; MIT License

@@ -46,8 +46,9 @@ readiness, not to script every word.
 ## The prompt
 
 ```
-I'm a {{YOUR_ROLE}} managing {{REPORT_ROLE}}. I need to have a difficult feedback
-conversation and want to prepare thoroughly before it happens.
+I'm a {{YOUR_ROLE}} managing {{REPORT_ROLE}}. I need to have
+a difficult feedback conversation and want to prepare
+thoroughly before it happens.
 
 **The situation:**
 {{DESCRIBE_SITUATION}}
@@ -68,18 +69,21 @@ conversation and want to prepare thoroughly before it happens.
 
 Please help me with four things:
 
-1. Draft an opening statement (2–4 sentences) that is direct, behavior-focused,
-   and doesn't trigger defensiveness before I've been heard.
+1. Draft an opening statement (2–4 sentences) that is direct,
+   behavior-focused, and doesn't trigger defensiveness before
+   I've been heard.
 
-2. Anticipate the 3 most likely responses or deflections from this person given
-   what I've shared, and give me a specific, curious (not combative) way to
-   respond to each.
+2. Anticipate the 3 most likely responses or deflections from
+   this person given what I've shared, and give me a specific,
+   curious (not combative) way to respond to each.
 
-3. Challenge my framing: what am I possibly getting wrong, missing, or
-   over-weighting here? What would I want to know before having this conversation?
+3. Challenge my framing: what am I possibly getting wrong,
+   missing, or over-weighting here? What would I want to
+   know before having this conversation?
 
-4. Draft a closing that names a specific next step and a timeline — something
-   concrete enough that we both know what success looks like.
+4. Draft a closing that names a specific next step and a
+   timeline — something concrete enough that we both know
+   what success looks like.
 ```
 
 ---

@@ -31,7 +31,8 @@ Most engineering manager job descriptions fail to represent the actual job: they
 ## The prompt
 
 ```
-Help me write a compelling, accurate job description for an engineering manager role.
+Help me write a compelling, accurate job description
+for an engineering manager role.
 
 **Company context:**
 {{COMPANY_CONTEXT}}
@@ -42,7 +43,8 @@ Help me write a compelling, accurate job description for an engineering manager 
 **What this EM will own:**
 {{ROLE_SCOPE}}
 
-**The most important things this person needs to do well in the first 6 months:**
+**The most important things this person needs to do
+well in the first 6 months:**
 {{FIRST_SIX_MONTHS}}
 
 **Non-negotiable requirements:**
@@ -56,25 +58,32 @@ Help me write a compelling, accurate job description for an engineering manager 
 
 Please produce:
 
-1. A job title and one-sentence framing that is accurate and specific — not
-   "Engineering Manager" with a generic subtitle.
+1. A job title and one-sentence framing that is accurate
+   and specific — not "Engineering Manager" with a
+   generic subtitle.
 
-2. A 3–4 sentence "about the role" paragraph that describes the actual
-   opportunity — what the EM will build, who they'll work with, and why
-   it matters. Not a mission statement.
+2. A 3–4 sentence "about the role" paragraph that
+   describes the actual opportunity — what the EM will
+   build, who they'll work with, and why it matters.
+   Not a mission statement.
 
-3. A "what you'll do" section with 5–7 specific responsibilities. Use verb-first
-   bullets. Avoid "partner with" and "drive alignment" as standalone entries —
-   those are means, not responsibilities.
+3. A "what you'll do" section with 5–7 specific
+   responsibilities. Use verb-first bullets. Avoid
+   "partner with" and "drive alignment" as standalone
+   entries — those are means, not responsibilities.
 
-4. A "what we're looking for" section split into required and preferred.
-   Required: 3–5 items that are genuinely non-negotiable. Preferred: 2–3 items
-   that meaningfully differentiate candidates but aren't blockers.
+4. A "what we're looking for" section split into
+   required and preferred. Required: 3–5 items that are
+   genuinely non-negotiable. Preferred: 2–3 items that
+   meaningfully differentiate candidates but aren't
+   blockers.
 
-5. One paragraph that honestly describes the challenges of this role — the
-   messy parts, the gaps, the things a new EM will have to figure out. This
-   signals respect for the candidate and filters for people who find the
-   challenge interesting rather than threatening.
+5. One paragraph that honestly describes the challenges
+   of this role — the messy parts, the gaps, the things
+   a new EM will have to figure out. This signals
+   respect for the candidate and filters for people who
+   find the challenge interesting rather than
+   threatening.
 ```
 
 ---

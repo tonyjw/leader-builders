@@ -22,12 +22,17 @@ const pageTitle = title ? `${title} — leader.builders` : 'leader.builders';
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header class="site-header">
       <div class="site-header__inner">
-        <a href="/" class="site-logo">leader.builders</a>
+        <a href="/" class="site-logo">
+          <div class="site-logo__circle">L</div>
+          <span class="site-logo__text">Leader Builders</span>
+        </a>
         <a href="https://github.com/tonyjw/leader-builders" target="_blank" rel="noopener" class="site-nav-link">GitHub</a>
       </div>
     </header>
@@ -38,6 +43,10 @@ const pageTitle = title ? `${title} — leader.builders` : 'leader.builders';
 
     <footer class="site-footer">
       <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <div class="site-logo__circle" style="width:1.5rem;height:1.5rem;font-size:0.875rem;">L</div>
+          <span class="site-footer__name">Leader Builders</span>
+        </div>
         <p>
           <a href="https://github.com/tonyjw/leader-builders" target="_blank" rel="noopener">GitHub</a>
           &middot; MIT License

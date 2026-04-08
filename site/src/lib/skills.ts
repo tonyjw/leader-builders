@@ -47,6 +47,15 @@ export const CATEGORIES: Record<string, string> = {
   'career-growth': 'Career growth',
 };
 
+export const CATEGORY_DESCRIPTIONS: Record<string, string> = {
+  'people-management': 'Build trust, navigate difficult conversations, and help your team do their best work.',
+  'agile-delivery': 'Run better ceremonies, improve your process, and help your team ship with confidence.',
+  'strategy-planning': 'Communicate direction, make technical investment decisions, and align stakeholders.',
+  'hiring-talent': 'Write job descriptions, design assessments, and build a process that finds great engineers.',
+  'ai-transformation': 'Lead your team through adopting AI tools and build a compelling case for investment.',
+  'career-growth': 'Advocate for yourself, navigate performance systems, and build your leadership presence.',
+};
+
 // ── Parsing ──────────────────────────────────────────────────────
 
 function parseFrontmatter(raw: string): { data: Record<string, unknown>; content: string } {

@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { CATEGORIES, getSkillsByCategory } from '../../lib/skills';
+import { CATEGORIES, CATEGORY_DESCRIPTIONS, getSkillsByCategory } from '../../lib/skills';
 
 export function getStaticPaths() {
   return Object.keys(CATEGORIES).map(category => ({
@@ -10,30 +10,43 @@ export function getStaticPaths() {
 
 const { category } = Astro.params;
 const label = CATEGORIES[category!] ?? category;
+const description = CATEGORY_DESCRIPTIONS[category!] ?? '';
 const skills = getSkillsByCategory(category!);
 ---
 
 <Base
   title={label}
-  description={`Evidence-backed skills for engineering leaders: ${label}`}
+  description={`${description} — Leader Builders`}
 >
-  <div class="category-header">
-    <div class="breadcrumb">
-      <a href="/">All skills</a>
+  <div class="category-page">
+    <div class="category-hero">
+      <div class="category-hero__inner">
+        <div class="breadcrumb"><a href="/">All skills</a></div>
+        <h1 class="category-hero__title">{label}</h1>
+        {description && <p class="category-hero__desc">{description}</p>}
+        <p class="category-hero__meta">{skills.length} skill{skills.length !== 1 ? 's' : ''}</p>
+      </div>
     </div>
-    <h1>{label}</h1>
-    <p style="color: var(--color-text-muted)">
-      {skills.length} skill{skills.length !== 1 ? 's' : ''}
-    </p>
-  </div>
 
-  <ul class="skill-tree__list">
-    {skills.map(skill => (
-      <li class="skill-tree__item">
-        <a href={`/skills/${skill.slug}/`}>{skill.frontmatter.title}</a>
-        <span class="skill-tree__sep"> — </span>
-        <span class="skill-tree__desc">{skill.frontmatter['when-to-use']}</span>
-      </li>
-    ))}
-  </ul>
+    <div class="category-list">
+      <div class="category-list__inner">
+        <ul class="skill-tree__list">
+          {skills.map(skill => (
+            <li class="skill-tree__item">
+              <a href={`/skills/${skill.slug}/`}>{skill.frontmatter.title}</a>
+              <span class="skill-tree__sep"> — </span>
+              <span class="skill-tree__desc">{skill.frontmatter['when-to-use']}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
 </Base>
+
+<style is:global>
+  body:has(.category-page) .container {
+    max-width: unset;
+    padding: 0;
+  }
+</style>

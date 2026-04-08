@@ -3,7 +3,7 @@ title: Run an effective team retrospective
 slug: run-an-effective-team-retrospective
 status: active
 
-category: people-management
+category: agile-delivery
 tags: [retrospective, agile, facilitation, team-health, continuous-improvement]
 difficulty: intermediate
 works-with: [all]
@@ -15,8 +15,8 @@ when-to-use: >
 
 not-for: >
   Post-mortems after serious incidents or outages — those require a blameless
-  root-cause structure, not a team improvement cycle. Use an incident review
-  framework for those instead.
+  root-cause structure, not a team improvement cycle. Use the blameless
+  postmortem skill for those instead.
 
 time-to-run: 15 minutes
 

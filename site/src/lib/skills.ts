@@ -40,6 +40,7 @@ export interface Skill {
 
 export const CATEGORIES: Record<string, string> = {
   'people-management': 'People management',
+  'agile-delivery': 'Agile delivery',
   'strategy-planning': 'Strategy & planning',
   'hiring-talent': 'Hiring & talent',
   'ai-transformation': 'AI transformation',

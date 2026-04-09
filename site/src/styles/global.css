@@ -124,6 +124,12 @@ img, svg {
   padding-bottom: 2px;
 }
 
+.site-logo__circle--sm {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.875rem;
+}
+
 .site-logo__text {
   font-family: var(--font-sans);
   font-size: var(--text-sm);

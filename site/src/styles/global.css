@@ -9,12 +9,15 @@
   --color-ink-faint:   #a8a29e;
   --color-rule:        #e7e5e4;
   --color-surface:     #f5f4f0;
-  --color-gold:        #C5A059;
+  --color-gold:              #7C5E00;  /* accessible gold — 5.71:1 on paper, 6.07:1 for white-on-gold */
+  --color-gold-vibrant:      #C5A059;  /* original gold for dark backgrounds (7.12:1 on footer-bg) */
+  --color-gold-chip-bg:      rgba(124, 94, 0, 0.12);  /* var-chip resting tint */
+  --color-gold-chip-active:  rgba(124, 94, 0, 0.25);  /* var-chip hover/active tint */
   --color-footer-bg:   #1c1917;
   --color-white:       #ffffff;
 
   /* Typography */
-  --font-prose:  'Playfair Display', Georgia, serif;
+  --font-prose:  'Playfair Display', georgia, serif;
   --font-sans:   'Inter', system-ui, -apple-system, sans-serif;
   --font-mono:   'Fira Code', 'Courier New', monospace;
 
@@ -143,9 +146,11 @@ img, svg {
   border-radius: 9999px;
 }
 
-.site-nav-link:hover {
+.site-nav-link:hover,
+.site-nav-link:focus-visible {
   background: var(--color-ink);
   color: var(--color-paper);
+  outline: none;
 }
 
 /* ── Footer ─────────────────────────────────────────── */
@@ -170,7 +175,7 @@ img, svg {
 }
 
 .site-footer a:hover {
-  color: var(--color-gold);
+  color: var(--color-gold-vibrant);
 }
 
 .site-footer__brand {
@@ -374,7 +379,7 @@ cite {
 .search-input:focus {
   outline: none;
   border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.12);
+  box-shadow: 0 0 0 3px rgba(124, 94, 0, 0.15);
 }
 
 .search-input::placeholder {
@@ -615,7 +620,7 @@ cite {
 
 /* ── Variable chips inside prompt ───────────────────── */
 .var-chip {
-  background: rgba(197, 160, 89, 0.15);
+  background: var(--color-gold-chip-bg);
   color: var(--color-ink);
   padding: 1px 4px;
   border-radius: 2px;
@@ -624,7 +629,7 @@ cite {
 
 .var-chip.is-active,
 .var-chip:hover {
-  background: rgba(197, 160, 89, 0.3);
+  background: var(--color-gold-chip-active);
 }
 
 /* ── Variable annotation cards ─────────────────────── */
@@ -866,7 +871,7 @@ cite {
 .lp-search__input:focus {
   outline: none;
   border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+  box-shadow: 0 0 0 3px rgba(124, 94, 0, 0.15);
 }
 
 .lp-search__input::placeholder {
@@ -992,7 +997,7 @@ cite {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: var(--tracking-widest);
-  color: var(--color-gold);
+  color: var(--color-gold-vibrant);
 }
 
 .lp-spotlight__dots {
@@ -1013,7 +1018,7 @@ cite {
 }
 
 .lp-spotlight__dot.is-active {
-  background: var(--color-gold);
+  background: var(--color-gold-vibrant);
 }
 
 .lp-spotlight__dot:hover {
@@ -1050,7 +1055,7 @@ cite {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
-  color: var(--color-gold);
+  color: var(--color-gold-vibrant);
   border: 1px solid rgba(197, 160, 89, 0.4);
   padding: 0.2rem 0.625rem;
   border-radius: 9999px;
@@ -1081,7 +1086,7 @@ cite {
   font-family: var(--font-sans);
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--color-gold);
+  color: var(--color-gold-vibrant);
   text-decoration: none;
   border-bottom: 1px solid rgba(197, 160, 89, 0.4);
   padding-bottom: 1px;
@@ -1089,8 +1094,8 @@ cite {
 }
 
 .lp-spotlight__link:hover {
-  border-bottom-color: var(--color-gold);
-  color: var(--color-gold);
+  border-bottom-color: var(--color-gold-vibrant);
+  color: var(--color-gold-vibrant);
   text-decoration: none;
 }
 

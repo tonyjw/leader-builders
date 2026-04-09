@@ -197,8 +197,29 @@ const spotlightSkills = skills.map(s => ({
     const dotsEl    = document.getElementById('spotlight-dots');
     if (!contentEl || !dotsEl) return;
 
+    const INTERVAL = 15000;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     let current = Math.floor(Math.random() * skills.length);
     let timer;
+
+    function startTimer() {
+      if (reducedMotion) return;
+      timer = setInterval(advance, INTERVAL);
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+    }
+
+    // Pause on hover or focus within the spotlight section
+    const spotlightEl = contentEl.closest('.lp-spotlight');
+    if (spotlightEl) {
+      spotlightEl.addEventListener('pointerenter', stopTimer);
+      spotlightEl.addEventListener('pointerleave', startTimer);
+      spotlightEl.addEventListener('focusin', stopTimer);
+      spotlightEl.addEventListener('focusout', startTimer);
+    }
 
     skills.forEach((_, i) => {
       const btn = document.createElement('button');
@@ -206,10 +227,10 @@ const spotlightSkills = skills.map(s => ({
       btn.setAttribute('aria-label', `Show skill ${i + 1}`);
       btn.dataset.idx = String(i);
       btn.addEventListener('click', () => {
-        clearInterval(timer);
+        stopTimer();
         current = i;
         render(current);
-        timer = setInterval(advance, 6000);
+        startTimer();
       });
       dotsEl.appendChild(btn);
     });
@@ -249,6 +270,6 @@ const spotlightSkills = skills.map(s => ({
     }
 
     render(current);
-    timer = setInterval(advance, 6000);
+    startTimer();
   })();
 </script>

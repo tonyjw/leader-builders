@@ -47,3 +47,6 @@ build/
 Thumbs.db
 
 inspiration
+
+# Claude Code
+.claude/launch.json

@@ -4,7 +4,8 @@ import { marked } from 'marked';
 // Read all skill markdown files as raw strings from outside the site root.
 // import.meta.glob with as:'raw' inlines file content at build time — no fs at runtime.
 const rawFiles = import.meta.glob('../../../skills/**/*.md', {
-  as: 'raw',
+  query: '?raw',
+  import: 'default',
   eager: true,
 }) as Record<string, string>;
 

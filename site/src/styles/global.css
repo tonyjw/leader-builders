@@ -784,6 +784,7 @@ cite {
 .lp-hero {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   padding: var(--space-2xl) 0 var(--space-xl);
   text-align: center;
   /* Base dot grid — always visible, small */
@@ -794,11 +795,17 @@ cite {
   border-bottom: 1px solid var(--color-rule);
 }
 
+.lp-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
 /* Wave layer — larger dots revealed by a diagonal mask that sweeps every 30s */
 .lp-hero::before {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 0;
   pointer-events: none;
   background:
     radial-gradient(circle, rgba(197,160,89,0.32) 2.5px, transparent 2.5px);

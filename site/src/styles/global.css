@@ -782,11 +782,58 @@ cite {
 
 /* ── Landing page hero ──────────────────────────────── */
 .lp-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   padding: var(--space-2xl) 0 var(--space-xl);
   text-align: center;
-  background: linear-gradient(180deg, var(--color-paper) 60%, var(--color-white) 100%);
+  /* Base dot grid — always visible, small */
+  background:
+    radial-gradient(circle, rgba(197,160,89,0.22) 1.5px, transparent 1.5px),
+    linear-gradient(180deg, var(--color-paper) 60%, var(--color-white) 100%);
+  background-size: 24px 24px, 100% 100%;
   border-bottom: 1px solid var(--color-rule);
 }
+
+.lp-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Wave layer — larger dots revealed by a diagonal mask that sweeps every 30s */
+.lp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, rgba(197,160,89,0.32) 2.5px, transparent 2.5px);
+  background-size: 24px 24px;
+  -webkit-mask-image: linear-gradient(135deg, transparent 46%, black 50%, transparent 54%);
+          mask-image: linear-gradient(135deg, transparent 46%, black 50%, transparent 54%);
+  -webkit-mask-size: 600% 600%;
+          mask-size: 600% 600%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  /* At 100% 100% the gradient band is off the top-left of the element (hidden).
+     At 50% 50% it sweeps through the center. At 0% 0% it's off the bottom-right. */
+  -webkit-mask-position: 100% 100%;
+          mask-position: 100% 100%;
+  animation: hero-dot-wave 90s ease-in-out infinite;
+}
+
+@keyframes hero-dot-wave {
+  0%    { -webkit-mask-position: 100% 100%; mask-position: 100% 100%; }
+  18%   { -webkit-mask-position:   0%   0%; mask-position:   0%   0%; }
+  18.1% { -webkit-mask-position: 100% 100%; mask-position: 100% 100%; }
+  100%  { -webkit-mask-position: 100% 100%; mask-position: 100% 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-hero::before { display: none; }
+}
+
 
 .lp-hero__inner {
   max-width: 680px;

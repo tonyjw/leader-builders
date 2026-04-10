@@ -163,6 +163,7 @@ img, svg {
 .site-footer {
   background: var(--color-footer-bg);
   padding: var(--space-xl) 0 var(--space-lg);
+  margin-top: 0;
 }
 
 .site-footer__inner {
@@ -1253,8 +1254,9 @@ cite {
 
 /* ── Contribute CTA ─────────────────────────────────── */
 .lp-contribute {
-  background: var(--color-footer-bg);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--color-white);
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
   padding: var(--space-xl) 0;
   text-align: center;
 }
@@ -1263,14 +1265,14 @@ cite {
   font-family: var(--font-sans);
   font-size: var(--text-lg);
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-ink);
   margin: 0 0 var(--space-sm);
 }
 
 .lp-contribute__sub {
   font-family: var(--font-sans);
   font-size: var(--text-sm);
-  color: var(--color-ink-faint);
+  color: var(--color-ink-muted);
   margin: 0 0 var(--space-lg);
 }
 
@@ -1281,17 +1283,17 @@ cite {
   font-family: var(--font-sans);
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--color-gold-vibrant);
+  color: var(--color-gold);
   text-decoration: none;
-  border: 1px solid rgba(197, 160, 89, 0.4);
+  border: 1px solid rgba(124, 94, 0, 0.4);
   border-radius: 0.25rem;
   padding: 0.5rem 1.125rem;
   transition: border-color 0.15s, color 0.15s;
 }
 
 .lp-contribute__btn:hover {
-  border-color: var(--color-gold-vibrant);
-  color: var(--color-gold-vibrant);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
 }
 
 /* ── Responsive ─────────────────────────────────────── */
